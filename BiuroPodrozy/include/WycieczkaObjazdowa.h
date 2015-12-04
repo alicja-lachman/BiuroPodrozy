@@ -7,6 +7,7 @@
 class WycieczkaObjazdowa : public Wycieczka
 {
     public:
+        char nazwa[30];
         WycieczkaObjazdowa();
         virtual ~WycieczkaObjazdowa();
     protected:

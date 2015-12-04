@@ -16,38 +16,65 @@ BiuroPodrozy::~BiuroPodrozy()
 {
     //dtor
 }
+/*Funkcja sprawdzajaca, czy dany plik opisuje wycieczke objazdow¹ czy wczasy */
+void BiuroPodrozy::interpretujDane(string zawartosc){
+
+char *cstr = new char[zawartosc.length()+1];
+
+    strcpy(cstr, zawartosc.c_str());
+
+    switch(cstr[1]){
+    case 'P':
+        cout<<"Mamy wczasy"<<endl;
+        //biuro.tworzWczasy(&cstr);
+        break;
+    case 'O':
+        cout<<"Mamy objazd"<<endl;
+        break;
+    default:
+        cout<<"Niepoprawny format pliku!! Program zaraz wybuchnie!"<<endl;
+        break;
+    }
+
+    delete [] cstr;
+}
 
 void BiuroPodrozy::czytajPlik(){
 
 
-struct dirent * plik;
-    DIR * sciezka;
+struct dirent * plik;  //korzystanie z biblioteki POSIX
+DIR * sciezka;
+BiuroPodrozy biuro;
 
+    if((sciezka = opendir("oferty/"))) {    //otworzenie katalogu z ofertami
+        while((plik = readdir(sciezka))){
 
+            // puts(plik->d_name);               //wypisanie nazwy znalezionego pliku
 
-    if(( sciezka = opendir("oferty/") ) ) {
-        while(( plik = readdir( sciezka ) ) ){
-             puts( plik->d_name );
-              string zawartosc_pliku;
- char pelna_sciezka[40] = "oferty/";
-strcat(pelna_sciezka,plik->d_name);
+             string zawartosc_pliku;
 
-   ifstream NowyPlik;
-   NowyPlik.open(pelna_sciezka);
+             char pelna_sciezka[40] = "oferty/";
+             strcat(pelna_sciezka,plik->d_name);
 
-   while(NowyPlik.good())
-        {
-            cout <<"jestem tu!!"<<endl;
-        getline(NowyPlik, zawartosc_pliku);
-        cout<<zawartosc_pliku<<endl;
-        }
+             ifstream NowyPlik;
+             NowyPlik.open(pelna_sciezka);   //otworzenie pliku
 
-   NowyPlik.close();
-        }
-        closedir( sciezka );
+                while(NowyPlik.good()){
+
+                cout <<"Jestem w pliku!!"<<endl;
+                getline(NowyPlik, zawartosc_pliku);
+                cout<<zawartosc_pliku<<endl;
+                biuro.interpretujDane(zawartosc_pliku);
+                }
+
+             NowyPlik.close();
+
+          }
+          closedir( sciezka );
     }
     else
-         printf( "! wywo³uj¹c funkcjê opendir(%s) pojawi³ siê b³¹d otwarcia strumienia dla danej œcie¿ki, mo¿e nie istnieje, lub podano œcie¿kê pust¹\n");
+         printf( "Blad otwarcia sciezki do katalogu!");
 
 
 }
+
