@@ -8,7 +8,7 @@ using namespace std;
 class WycieczkaObjazdowa : public Wycieczka
 {
     public:
-        char nazwa[30];
+
         struct tm data_zakonczenia;
         list <char> lista_miast;
         WycieczkaObjazdowa();

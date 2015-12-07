@@ -3,34 +3,37 @@
 	<iostream>
 	"BiuroPodrozy.h"
 
-1449250354 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wczasy.cpp
+1449482316 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wczasy.cpp
 	"Wczasy.h"
 
-1449432555 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wczasy.h
+1449487089 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wczasy.h
 	<Wycieczka.h>
+	<vector>
 
-1449433950 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczka.h
+1449487778 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczka.h
 	<time.h>
 
-1449433985 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczka.cpp
+1449482368 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczka.cpp
 	"Wycieczka.h"
+	<string.h>
 
 1449250333 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczkaobjazdowa.cpp
 	"WycieczkaObjazdowa.h"
 
-1449432563 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczkaobjazdowa.h
+1449482315 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczkaobjazdowa.h
 	<list>
 	<Wycieczka.h>
 
-1449438024 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\biuropodrozy.cpp
+1449490271 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\biuropodrozy.cpp
 	"BiuroPodrozy.h"
 	<string.h>
 	<iostream>
 	<fstream>
 	<vector>
 	<dirent.h>
+	<stdlib.h>
 
-1449438011 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\biuropodrozy.h
+1449490528 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\biuropodrozy.h
 	"Wczasy.h"
 	"WycieczkaObjazdowa.h"
 	<string.h>

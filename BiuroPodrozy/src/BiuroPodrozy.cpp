@@ -4,6 +4,7 @@
 #include <fstream>
 #include <vector>
 #include <dirent.h>
+#include <stdlib.h>
 using namespace std;
 
 BiuroPodrozy::BiuroPodrozy()
@@ -87,8 +88,43 @@ BiuroPodrozy biuro;
 }
 
  void BiuroPodrozy::tworzWczasy(vector <char*> opis){
-    cout<<"Tworze wczasy!"<<endl;
-    cout<<opis.at(3)<<endl;
 
+    Wczasy noweWczasy;
+    strcpy(noweWczasy.nazwa,opis.at(1));
+    noweWczasy.data_rozpoczecia.tm_year=atoi(opis.at(2));
+    noweWczasy.data_rozpoczecia.tm_mon=atoi(opis.at(3));
+    noweWczasy.data_rozpoczecia.tm_mday=atoi(opis.at(4));
+    noweWczasy.dlugosc_turnusu=atoi(opis.at(5));
+    strcpy(noweWczasy.destynacja_miasto,opis.at(6));
+    strcpy(noweWczasy.destynacja_kraj,opis.at(7));
+    noweWczasy.kosztWycieczki=atoi(opis.at(8));
+
+    BiuroPodrozy::rodzajTransportu(opis, 9, noweWczasy);
+
+    if (opis.size()>12){
+        BiuroPodrozy::rodzajTransportu(opis, 11, noweWczasy);
+            if(opis.size()<15){
+            cout<<"nie ma wiecej srodkow transportu"<<endl;  //wyjscie z petli dodac
+            }else {
+            BiuroPodrozy::rodzajTransportu(opis, 13, noweWczasy);
+            }
+    }//else cout<<"Tylko jeden srodek transportu"<<endl;
+    lista_wczasow.push_back(noweWczasy);
+}
+
+
+//dodac zabezpieczenie, jesli wystapi jakis blad to wywiesic flage
+ void BiuroPodrozy::rodzajTransportu(vector<char*>opis,int i, Wczasy &wczasy){
+    string pomocniczy=opis.at(i);
+ if (pomocniczy=="Autokar") {
+    strcpy(wczasy.dojazd,opis.at(i));
+    wczasy.koszt_autokar=atoi(opis.at(i+1));
+ }else if (pomocniczy=="Samolot") {
+    strcpy(wczasy.dojazd,opis.at(i));
+    wczasy.koszt_samolot=atoi(opis.at(i+1));
+ }else if (pomocniczy=="Wlasny") {
+    strcpy(wczasy.dojazd,opis.at(i));
+    wczasy.koszt_wlasny=atoi(opis.at(i+1));
+ }else cout<<"Cos sknocone!"<<endl;
 }
 

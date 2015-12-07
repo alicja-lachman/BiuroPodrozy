@@ -5,11 +5,10 @@
 class Wycieczka
 {
     public:
+        char nazwa[30];
         struct tm data_rozpoczecia;
-        enum dojazd {autokar, samolot, wlasny};
-        int koszt_autokar;
-        int koszt_samolot;
-        int koszt_wlasny;
+        char dojazd[30];        //problemy z enumem
+        int kosztWycieczki;
         Wycieczka();
         virtual ~Wycieczka();
         virtual void tworzObiekt();

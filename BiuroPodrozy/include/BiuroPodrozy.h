@@ -10,11 +10,11 @@ using namespace std;
 class BiuroPodrozy
 {
     public:
-        vector <Wczasy> lista_wczasow;
+        static vector <Wczasy> lista_wczasow;
         vector <WycieczkaObjazdowa> lista_objazdowek;
         BiuroPodrozy();
         virtual ~BiuroPodrozy();
-
+        static void rodzajTransportu(vector<char*>opis,int i, Wczasy &wczasy);
        void interpretujDane(string zawartosc);
        static void tworzWczasy(vector <char*> opis);
         void czytajPlik();

@@ -3,6 +3,7 @@
 Wczasy::Wczasy()
 {
     //ctor
+
 }
 
 Wczasy::~Wczasy()

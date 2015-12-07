@@ -1,7 +1,10 @@
 #include "Wycieczka.h"
+#include <string.h>
+
 
 Wycieczka::Wycieczka()
 {
+    strcpy(this->nazwa,"probna");
     //ctor
 }
 
