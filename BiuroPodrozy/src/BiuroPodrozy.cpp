@@ -27,35 +27,39 @@ string pomocniczy;
 
     strcpy(cstr, zawartosc.c_str());
     printf ("Splitting string \"%s\" into tokens:\n",cstr);
-    pch = strtok (cstr," ,.-");     //podzielenie zawartosci pliku na tokeny
+    pch = strtok (cstr," [],.-");     //podzielenie zawartosci pliku na tokeny
 
     while (pch != NULL){
 
         printf ("%s\n",pch);
         dane.push_back(pch);    //umieszczenie kazdego tokena w wektorze 'dane'
-        pch = strtok (NULL, " ,.-");
+        pch = strtok (NULL, "[] ,.-");
     }
 
     pomocniczy=dane.at(0);
 //sprawdzenie, czy mamy do czynienia z wycieczka objazdowa czy z wczasami
     if(pomocniczy=="WP:"){
         cout<<"To beda wczasy!!"<<endl;
-        BiuroPodrozy::tworzWczasy(dane);
+        this->tworzWczasy(dane);
+
     }
     else if (pomocniczy=="WO:"){
         cout<<"Mamy objazdwoke!"<<endl;
+        this->tworzObjazdowke(dane);
     }else
         cout<<"cos sknocone"<<endl;
-
-    delete cstr;
+     cout<<"nasz wektorek"<<lista_wczasow.size()<<endl;
+     cout<<"nasz drugi wektorek"<<lista_objazdowek.size()<<endl;
     delete pch;
+
+
 }
 
 void BiuroPodrozy::czytajPlik(){
 
 struct dirent * plik;  //korzystanie z biblioteki POSIX
 DIR * sciezka;
-BiuroPodrozy biuro;
+
 
     if((sciezka = opendir("oferty/"))) {    //otworzenie katalogu z ofertami
         while((plik = readdir(sciezka))){
@@ -73,7 +77,7 @@ BiuroPodrozy biuro;
                 cout <<"Jestem w pliku!!"<<endl;
                 getline(NowyPlik, zawartosc_pliku);
                 cout<<zawartosc_pliku<<endl;
-                biuro.interpretujDane(zawartosc_pliku);
+                this->interpretujDane(zawartosc_pliku);
              }
 
              NowyPlik.close();
@@ -87,8 +91,7 @@ BiuroPodrozy biuro;
 
 }
 
- void BiuroPodrozy::tworzWczasy(vector <char*> opis){
-
+void BiuroPodrozy::tworzWczasy(vector <char*> opis){
     Wczasy noweWczasy;
     strcpy(noweWczasy.nazwa,opis.at(1));
     noweWczasy.data_rozpoczecia.tm_year=atoi(opis.at(2));
@@ -108,10 +111,41 @@ BiuroPodrozy biuro;
             }else {
             BiuroPodrozy::rodzajTransportu(opis, 13, noweWczasy);
             }
-    }//else cout<<"Tylko jeden srodek transportu"<<endl;
-    lista_wczasow.push_back(noweWczasy);
+
+}
+this->lista_wczasow.push_back(noweWczasy);
 }
 
+//Funkcja dodajaca objazdowke z pliku do wektora objazdowek
+void BiuroPodrozy::tworzObjazdowke(vector <char*> opis){
+    WycieczkaObjazdowa nowaObjazdowka;
+
+    strcpy(nowaObjazdowka.nazwa,opis.at(1));
+    nowaObjazdowka.data_rozpoczecia.tm_year=atoi(opis.at(2));
+    nowaObjazdowka.data_rozpoczecia.tm_mon=atoi(opis.at(3));
+    nowaObjazdowka.data_rozpoczecia.tm_mday=atoi(opis.at(4));
+    nowaObjazdowka.data_zakonczenia.tm_year=atoi(opis.at(5));
+    nowaObjazdowka.data_zakonczenia.tm_mon=atoi(opis.at(6));
+    nowaObjazdowka.data_zakonczenia.tm_mday=atoi(opis.at(7));
+
+    int ilosc_danych=opis.size();
+
+    for (int i=8; i<ilosc_danych-1; i++){
+
+        if (atoi(opis.at(i))==0){
+
+            string pomoc=opis.at(i);
+            string pomoc2=opis.at(i+1);
+            nowaObjazdowka.lista_miast.push_back(pomoc);
+            nowaObjazdowka.lista_krajow.push_back(pomoc2);
+        }else{
+
+            nowaObjazdowka.kosztWycieczki=atoi(opis.at(i));
+            BiuroPodrozy::rodzajTransportu2(opis, i+1, nowaObjazdowka);
+        }
+    }
+this->lista_objazdowek.push_back(nowaObjazdowka);
+}
 
 //dodac zabezpieczenie, jesli wystapi jakis blad to wywiesic flage
  void BiuroPodrozy::rodzajTransportu(vector<char*>opis,int i, Wczasy &wczasy){
@@ -127,4 +161,18 @@ BiuroPodrozy biuro;
     wczasy.koszt_wlasny=atoi(opis.at(i+1));
  }else cout<<"Cos sknocone!"<<endl;
 }
+//zamienic na wirtualnaaaaa
+ void BiuroPodrozy::rodzajTransportu2(vector<char*>opis,int i, WycieczkaObjazdowa &objazdowka){
+    string pomocniczy=opis.at(i);
+ if (pomocniczy=="Autokar") {
+    strcpy(objazdowka.dojazd,opis.at(i));
+ }else if (pomocniczy=="Samolot") {
+    strcpy(objazdowka.dojazd,opis.at(i));
+
+ }else if (pomocniczy=="Wlasny") {
+    strcpy(objazdowka.dojazd,opis.at(i));
+
+ }else cout<<"Cos sknocone!"<<endl;
+}
+
 

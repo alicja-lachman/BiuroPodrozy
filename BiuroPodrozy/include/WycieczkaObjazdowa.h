@@ -2,6 +2,7 @@
 #define WYCIECZKAOBJAZDOWA_H
 #include <list>
 #include <Wycieczka.h>
+#include <string>
 
 using namespace std;
 
@@ -10,7 +11,8 @@ class WycieczkaObjazdowa : public Wycieczka
     public:
 
         struct tm data_zakonczenia;
-        list <char> lista_miast;
+        list <string> lista_miast;
+        list <string> lista_krajow;
         WycieczkaObjazdowa();
         virtual ~WycieczkaObjazdowa();
     protected:

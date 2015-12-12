@@ -10,14 +10,17 @@ using namespace std;
 class BiuroPodrozy
 {
     public:
-        static vector <Wczasy> lista_wczasow;
+        //czo to? int podajIlosc();
+        vector <Wczasy> lista_wczasow;
         vector <WycieczkaObjazdowa> lista_objazdowek;
         BiuroPodrozy();
         virtual ~BiuroPodrozy();
         static void rodzajTransportu(vector<char*>opis,int i, Wczasy &wczasy);
+         static void rodzajTransportu2(vector<char*>opis,int i, WycieczkaObjazdowa &objazdowka);
        void interpretujDane(string zawartosc);
-       static void tworzWczasy(vector <char*> opis);
-        void czytajPlik();
+       void tworzWczasy(vector <char*> opis);
+       void tworzObjazdowke(vector <char*> opis);
+       void czytajPlik();
     protected:
     private:
 };
