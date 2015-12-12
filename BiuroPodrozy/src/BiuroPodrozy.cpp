@@ -55,18 +55,19 @@ string pomocniczy;
 
 }
 
-void BiuroPodrozy::czytajPlik(){
+void BiuroPodrozy::czytajPlik(char *folder){
 
 struct dirent * plik;  //korzystanie z biblioteki POSIX
 DIR * sciezka;
 
 
-    if((sciezka = opendir("oferty/"))) {    //otworzenie katalogu z ofertami
+    if((sciezka = opendir(folder))) {    //otworzenie katalogu z ofertami
         while((plik = readdir(sciezka))){
 
              string zawartosc_pliku;
 
-             char pelna_sciezka[40] = "oferty/";
+             char pelna_sciezka[100];
+             strcpy(pelna_sciezka,folder);
              strcat(pelna_sciezka,plik->d_name);
 
              ifstream NowyPlik;

@@ -20,7 +20,7 @@ class BiuroPodrozy
        void interpretujDane(string zawartosc);
        void tworzWczasy(vector <char*> opis);
        void tworzObjazdowke(vector <char*> opis);
-       void czytajPlik();
+       void czytajPlik(char *folder);
     protected:
     private:
 };
