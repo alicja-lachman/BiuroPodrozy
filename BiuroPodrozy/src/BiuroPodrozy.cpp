@@ -16,7 +16,7 @@ BiuroPodrozy::~BiuroPodrozy()
 {
     //dtor
 }
-/*Funkcja sprawdzajaca, czy dany plik opisuje wycieczke objazdow� czy wczasy */
+/*Funkcja sprawdzajaca, czy dany plik opisuje wycieczke objazdow¹ czy wczasy */
 //zmienic na cos w rodzaju PODZIAlDanych
 void BiuroPodrozy::interpretujDane(string zawartosc){
 
@@ -176,4 +176,31 @@ this->lista_objazdowek.push_back(nowaObjazdowka);
  }else cout<<"Cos sknocone!"<<endl;
 }
 
+void BiuroPodrozy::szukajWczasow(struct tm data, int dlugosc, float cena){
+
+    for (unsigned int i=0;i<lista_wczasow.size();i++){
+        if ((lista_wczasow[i].data_rozpoczecia.tm_year) >= data.tm_year) {
+            if (((lista_wczasow[i].data_rozpoczecia.tm_mon) > data.tm_mon)     //Bardzo dlugi warunek dla miesiace
+            || ((lista_wczasow[i].data_rozpoczecia.tm_mon) == data.tm_mon
+            && (lista_wczasow[i].data_rozpoczecia.tm_mday) >= data.tm_mday)){
+                cout<<"yay";
+                if((lista_wczasow[i].dlugosc_turnusu) <= dlugosc){
+                    if ((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_autokar)<=cena){
+                        //jak tak to wpis
+                    } //koniec warunku dla autokaru
+                    if ((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_samolot)<=cena){
+                        //jak tak to wpis
+                    } //koniec warunku dla samolotu
+                    if ((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_samolot)<=cena){
+                    } //koniec warunku dla dojazdu wlasnego
+
+                }//koniec petli sprawdzajacej dlugosc turnusu
+            } //koniec petli sprawdzajacej miesiac (bardzo długi warunek)
+        } //koniec petli sprawdzajacej rok
+
+
+    }
+
+
+}
 

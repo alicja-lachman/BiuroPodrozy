@@ -21,6 +21,7 @@ class BiuroPodrozy
        void tworzWczasy(vector <char*> opis);
        void tworzObjazdowke(vector <char*> opis);
        void czytajPlik(char *folder);
+       void szukajWczasow(struct tm data, int dlugosc, float cena);
     protected:
     private:
 };
