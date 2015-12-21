@@ -18,7 +18,7 @@ int main(int argc, char **argv){
     data.tm_mon=11;
     data.tm_year=2015;
 
-    biuro.szukajWczasow(data, 7, 3000);
+    biuro.szukajWczasow(data, 14, 3000);
    /* }else
         cout<<"Zla ilosc argumentow wywolania programu!!"<<endl; */
 

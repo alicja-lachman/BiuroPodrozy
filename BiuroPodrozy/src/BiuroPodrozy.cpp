@@ -150,7 +150,7 @@ this->lista_objazdowek.push_back(nowaObjazdowka);
 
 //dodac zabezpieczenie, jesli wystapi jakis blad to wywiesic flage
  void BiuroPodrozy::rodzajTransportu(vector<char*>opis,int i, Wczasy &wczasy){
-    string pomocniczy=opis.at(i);
+     string pomocniczy=opis.at(i);
  if (pomocniczy=="Autokar") {
     strcpy(wczasy.dojazd,opis.at(i));
     wczasy.koszt_autokar=atoi(opis.at(i+1));
@@ -178,29 +178,49 @@ this->lista_objazdowek.push_back(nowaObjazdowka);
 
 void BiuroPodrozy::szukajWczasow(struct tm data, int dlugosc, float cena){
 
+    this->liczbaWczasow=0;
     for (unsigned int i=0;i<lista_wczasow.size();i++){
         if ((lista_wczasow[i].data_rozpoczecia.tm_year) >= data.tm_year) {
-            if (((lista_wczasow[i].data_rozpoczecia.tm_mon) > data.tm_mon)     //Bardzo dlugi warunek dla miesiace
+            if (((lista_wczasow[i].data_rozpoczecia.tm_mon) > data.tm_mon)     //Bardzo dlugi warunek dla miesiaca
             || ((lista_wczasow[i].data_rozpoczecia.tm_mon) == data.tm_mon
             && (lista_wczasow[i].data_rozpoczecia.tm_mday) >= data.tm_mday)){
                 cout<<"yay";
                 if((lista_wczasow[i].dlugosc_turnusu) <= dlugosc){
-                    if ((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_autokar)<=cena){
-                        //jak tak to wpis
-                    } //koniec warunku dla autokaru
-                    if ((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_samolot)<=cena){
-                        //jak tak to wpis
-                    } //koniec warunku dla samolotu
-                    if ((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_samolot)<=cena){
-                    } //koniec warunku dla dojazdu wlasnego
-
+                 if (((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_autokar)<=cena) ||
+                     ((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_samolot)<=cena) ||
+                     ((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_samolot)<=cena)){
+                        this->liczbaWczasow++;
+                        this->drukujWczasy("plik.txt", lista_wczasow[i], cena);
+                        if((dlugosc/lista_wczasow[i].dlugosc_turnusu)>1) {
+                            this->liczbaWczasow++;
+                            this->drukujWczasy("plik.txt",lista_wczasow[i],(dlugosc/lista_wczasow[i].dlugosc_turnusu));
+                        }
+                     } //spelniony ktorys warunek ceny
                 }//koniec petli sprawdzajacej dlugosc turnusu
             } //koniec petli sprawdzajacej miesiac (bardzo długi warunek)
         } //koniec petli sprawdzajacej rok
-
-
     }
+}
+//Funkcja zapisujaca do pliku wyjsciowego wczasy spelniajace warunki
+//cos nie halo z zapisem cen do pliku
+void BiuroPodrozy::drukujWczasy(char *sciezka, Wczasy &wczasy, float cena, int mnoznik){
 
+    float cenaSamolot = mnoznik*wczasy.kosztWycieczki + wczasy.koszt_samolot;
+    float cenaAutokar = mnoznik*wczasy.kosztWycieczki + wczasy.koszt_autokar;
+
+    ofstream plik;
+    plik.open(sciezka, ios_base::app); //nadpisywanie pliku
+    plik<<this->liczbaWczasow<<". "<<
+    wczasy.nazwa<<" Kraj: "<<wczasy.destynacja_kraj<<" Miejscowosc: "<<wczasy.destynacja_miasto<<" Koszt: ";
+
+    if (cenaAutokar<=cena) plik<<cenaAutokar<<" (Autokar)";
+    if (cenaSamolot<=cena) plik<<cenaSamolot<<" (Samolot)";
+    if (wczasy.kosztWycieczki<=cena)
+        plik<<wczasy.kosztWycieczki<<" (Dojazd wlasny)";
+    plik<<" Termin: "
+    <<wczasy.data_rozpoczecia.tm_year<<"."<<wczasy.data_rozpoczecia.tm_mon<<"."
+    <<wczasy.data_rozpoczecia.tm_mday<<" ("<<mnoznik*wczasy.dlugosc_turnusu<<" dni)"<<endl;
+    plik.close();
 
 }
 
