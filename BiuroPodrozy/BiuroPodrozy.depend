@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1450738044 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\main.cpp
+1450800369 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\main.cpp
 	<iostream>
 	"BiuroPodrozy.h"
 	<vector>
@@ -7,26 +7,26 @@
 1449482316 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wczasy.cpp
 	"Wczasy.h"
 
-1449487089 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wczasy.h
+1450782927 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wczasy.h
 	<Wycieczka.h>
 	<vector>
 
-1449487778 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczka.h
+1450783169 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczka.h
 	<time.h>
 
-1449482368 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczka.cpp
+1450783169 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczka.cpp
 	"Wycieczka.h"
 	<string.h>
 
 1449250333 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczkaobjazdowa.cpp
 	"WycieczkaObjazdowa.h"
 
-1449954107 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczkaobjazdowa.h
+1450783169 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczkaobjazdowa.h
 	<list>
 	<Wycieczka.h>
 	<string>
 
-1450738115 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\biuropodrozy.cpp
+1450800268 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\biuropodrozy.cpp
 	"BiuroPodrozy.h"
 	<string.h>
 	<iostream>
@@ -35,7 +35,7 @@
 	<dirent.h>
 	<stdlib.h>
 
-1450737856 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\biuropodrozy.h
+1450800268 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\biuropodrozy.h
 	"Wczasy.h"
 	"WycieczkaObjazdowa.h"
 	<string.h>

@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="-k /oferty -o plik.txt -r o -t RRRRDDMM -d 7 -c 200" />
+				<Option parameters="oferty/" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />

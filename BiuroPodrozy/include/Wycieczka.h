@@ -5,17 +5,13 @@
 class Wycieczka
 {
     public:
-        char nazwa[30];
-        struct tm data_rozpoczecia;
-        char dojazd[30];        //problemy z enumem
-        int kosztWycieczki;
         Wycieczka();
         virtual ~Wycieczka();
-        virtual void tworzObiekt();
-
-
-    protected:
+        friend class BiuroPodrozy;
     private:
+        char nazwa[30];
+        struct tm data_rozpoczecia;
+        int kosztWycieczki;
 };
 
 #endif // WYCIECZKA_H

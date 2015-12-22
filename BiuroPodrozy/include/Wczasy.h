@@ -6,18 +6,18 @@ using namespace std;
 
 class Wczasy : public Wycieczka
 {
-    public:
+private:
         int koszt_autokar;
         int koszt_samolot;
         int koszt_wlasny;
         int dlugosc_turnusu;
         char destynacja_kraj[30];
         char destynacja_miasto[30];
+    protected:
+    public:
         Wczasy();
         virtual ~Wczasy();
-       friend void tworzWczasy(vector <char*> opis);
-    protected:
-    private:
+        friend class BiuroPodrozy;
 };
 
 #endif // WCZASY_H

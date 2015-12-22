@@ -12,4 +12,4 @@ Wycieczka::~Wycieczka()
 {
     //dtor
 }
- void Wycieczka::tworzObiekt(){}
+

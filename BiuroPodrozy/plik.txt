@@ -1,4 +1,0 @@
-1. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1200 (Autokar)1900 (Samolot)700 (Dojazd wlasny) Termin: 2015.12.9 (7 dni)
-2. Algieria Kraj: Algieria Miejscowosc: Algier Koszt:  Termin: 2015.12.9 (7 dni)
-3. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500 (Autokar)600 (Samolot)500 (Dojazd wlasny) Termin: 2015.11.14 (7 dni)
-4. Algieria Kraj: Algieria Miejscowosc: Algier Koszt:  Termin: 2015.11.14 (7 dni)
