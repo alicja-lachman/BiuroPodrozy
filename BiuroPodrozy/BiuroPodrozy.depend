@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1450800369 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\main.cpp
+1450905759 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\main.cpp
 	<iostream>
 	"BiuroPodrozy.h"
 	<vector>
@@ -26,7 +26,7 @@
 	<Wycieczka.h>
 	<string>
 
-1450800268 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\biuropodrozy.cpp
+1450905923 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\biuropodrozy.cpp
 	"BiuroPodrozy.h"
 	<string.h>
 	<iostream>
@@ -35,7 +35,7 @@
 	<dirent.h>
 	<stdlib.h>
 
-1450800268 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\biuropodrozy.h
+1450905629 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\biuropodrozy.h
 	"Wczasy.h"
 	"WycieczkaObjazdowa.h"
 	<string.h>

@@ -19,6 +19,7 @@ class BiuroPodrozy
        void szukajObjazdowek(struct tm data, int dlugosc, float cena);
        struct tm dodajDate(struct tm &data, int dlugosc);
        struct tm obliczDate(int dni,struct tm &data, int dlugosc);
+       bool porownajDate(struct tm data1, struct tm data2);
     private:
        static void rodzajTransportu(vector<char*>opis,int i, Wczasy &wczasy);
        static void rodzajTransportu2(vector<char*>opis,int i, WycieczkaObjazdowa &objazdowka);

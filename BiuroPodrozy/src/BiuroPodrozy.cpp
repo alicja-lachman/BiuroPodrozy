@@ -224,12 +224,12 @@ void BiuroPodrozy::szukajObjazdowek(struct tm data, int dlugosc, float cena){
             if (((lista_objazdowek[i].data_rozpoczecia.tm_mon) > data.tm_mon)     //Bardzo dlugi warunek dla miesiaca
             || ((lista_objazdowek[i].data_rozpoczecia.tm_mon) == data.tm_mon
             && (lista_objazdowek[i].data_rozpoczecia.tm_mday) >= data.tm_mday)){
-                cout<<"yay";
 
 
 
 
-            }//koniec warunku dla daty poczatku
+
+            }//koniec warunku dla miesiace
         } //koniec warunku dla roku
     }//petla przegladajaca wszystkie objazdowki z wektora
 }
@@ -247,16 +247,19 @@ struct tm BiuroPodrozy::dodajDate(struct tm &data, int dlugosc){
             data=this->obliczDate(31, data, dlugosc);
             break;
         case 2:
+            if ((data.tm_mon%4)==0) data=this->obliczDate(29,data,dlugosc);
+            else data=this->obliczDate(28,data, dlugosc);
             break;
         case 4:
         case 6:
         case 9:
         case 11:
+            data=this->obliczDate(30,data, dlugosc);
             break;
         }
 
 }
-
+//tylko do 30/31 dni!
 struct tm BiuroPodrozy::obliczDate(int dni,struct tm &data, int dlugosc){
 
         if((dni-data.tm_mday)>dlugosc){
@@ -270,4 +273,15 @@ struct tm BiuroPodrozy::obliczDate(int dni,struct tm &data, int dlugosc){
             data.tm_mday = dlugosc-(dni-data.tm_mday);
         }
         return data;
+}
+
+bool BiuroPodrozy::porownajDate(struct tm data1, struct tm data2){
+
+    if((data1.tm_year)<(data2.tm_year)) return false;
+    else if((data1.tm_year)>(data2.tm_year)) return true;
+    else if ((data1.tm_year)<(data2.tm_year)) return false;
+    else if ((data1.tm_mon)>(data2.tm_mon)) return true;
+    else if ((data1.tm_mday)>=(data2.tm_mday)) return true;
+    else return false;
+
 }
