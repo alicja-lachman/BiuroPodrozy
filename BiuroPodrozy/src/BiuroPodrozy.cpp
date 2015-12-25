@@ -220,6 +220,12 @@ void BiuroPodrozy::drukujWczasy(char *sciezka, Wczasy &wczasy, float cena, int m
 void BiuroPodrozy::szukajObjazdowek(struct tm data, int dlugosc, float cena){
 
     for (unsigned int i=0;i<lista_objazdowek.size();i++){
+            if (porownajDate(lista_objazdowek[i].data_rozpoczecia, data)) {
+
+                cout<<"data sie zgadza"<<endl;
+            }
+
+            /*
         if ((lista_objazdowek[i].data_rozpoczecia.tm_year) >= data.tm_year) {
             if (((lista_objazdowek[i].data_rozpoczecia.tm_mon) > data.tm_mon)     //Bardzo dlugi warunek dla miesiaca
             || ((lista_objazdowek[i].data_rozpoczecia.tm_mon) == data.tm_mon
@@ -231,7 +237,8 @@ void BiuroPodrozy::szukajObjazdowek(struct tm data, int dlugosc, float cena){
 
             }//koniec warunku dla miesiace
         } //koniec warunku dla roku
-    }//petla przegladajaca wszystkie objazdowki z wektora
+    }//petla przegladajaca wszystkie objazdowki z wektora */
+}
 }
 
 struct tm BiuroPodrozy::dodajDate(struct tm &data, int dlugosc){
@@ -283,5 +290,27 @@ bool BiuroPodrozy::porownajDate(struct tm data1, struct tm data2){
     else if ((data1.tm_mon)>(data2.tm_mon)) return true;
     else if ((data1.tm_mday)>=(data2.tm_mday)) return true;
     else return false;
+
+}
+//Funkcja obliczajaca ilosc dni pomiedzy dwiema datami
+double BiuroPodrozy::obliczIloscDni(struct tm data1, struct tm data2){
+
+    struct tm pomoc1, pomoc2;
+    time_t rawtime;
+    time ( &rawtime );
+    pomoc1 = *localtime ( &rawtime );
+    pomoc2 = *localtime( &rawtime);
+
+    pomoc1.tm_year= data1.tm_year - 1900;
+    pomoc1.tm_mon = data1.tm_mon - 1;
+    pomoc1.tm_mday = data1.tm_mday;
+    pomoc2.tm_year= data2.tm_year - 1900;
+    pomoc2.tm_mon = data2.tm_mon - 1;
+    pomoc2.tm_mday = data2.tm_mday;
+
+    double sekundy = difftime(mktime(&pomoc2),mktime(&pomoc1));
+    double wynik = sekundy/86400;
+    return wynik;
+
 
 }
