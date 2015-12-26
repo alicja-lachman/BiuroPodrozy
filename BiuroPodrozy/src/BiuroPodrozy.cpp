@@ -9,7 +9,7 @@ using namespace std;
 
 BiuroPodrozy::BiuroPodrozy()
 {
-    this->liczbaWczasow=0;
+    this->liczbaWycieczek=0;
     //ctor
 }
 
@@ -125,14 +125,15 @@ void BiuroPodrozy::tworzObjazdowke(vector <char*> opis){
 
     int ilosc_danych=opis.size();
 
-    for (int i=8; i<ilosc_danych-1; i++){
+    for (int i=8; i<(ilosc_danych-1); i=i+2){
 
         if (atoi(opis.at(i))==0){
-
             string pomoc=opis.at(i);
             string pomoc2=opis.at(i+1);
             nowaObjazdowka.lista_miast.push_back(pomoc);
-            nowaObjazdowka.lista_krajow.push_back(pomoc2);
+            nowaObjazdowka.lista_krajow.insert(pomoc2);
+
+
         }else{
 
             nowaObjazdowka.kosztWycieczki=atoi(opis.at(i));
@@ -179,7 +180,7 @@ void BiuroPodrozy::szukajWczasow(struct tm data, int dlugosc, float cena){
                  if (((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_autokar)<=cena) ||
                      ((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_samolot)<=cena) ||
                      ((lista_wczasow[i].kosztWycieczki)<=cena)){
-                        this->liczbaWczasow++;
+                        this->liczbaWycieczek++;
                         this->drukujWczasy("plik.txt", lista_wczasow[i], cena);
 
                         int mnoznik=(dlugosc/lista_wczasow[i].dlugosc_turnusu);
@@ -187,7 +188,7 @@ void BiuroPodrozy::szukajWczasow(struct tm data, int dlugosc, float cena){
                                 if (((lista_wczasow[i].kosztWycieczki)*mnoznik+(lista_wczasow[i].koszt_autokar)<=cena) ||
                                 ((lista_wczasow[i].kosztWycieczki)*mnoznik+(lista_wczasow[i].koszt_samolot)<=cena) ||
                                 ((lista_wczasow[i].kosztWycieczki)*mnoznik<=cena)){
-                                    this->liczbaWczasow++;
+                                    this->liczbaWycieczek++;
                                     this->drukujWczasy("plik.txt",lista_wczasow[i],cena, (dlugosc/lista_wczasow[i].dlugosc_turnusu));
                                 } //warunek cenowy dla wielokrotnego turnusu
                         } //sprawdzenie, czy mozna rozwazac wielokrotnosc turnusu
@@ -205,7 +206,7 @@ void BiuroPodrozy::drukujWczasy(char *sciezka, Wczasy &wczasy, float cena, int m
 
     ofstream plik;
     plik.open(sciezka, ios_base::app); //nadpisywanie pliku
-    plik<<this->liczbaWczasow<<". "<<
+    plik<<this->liczbaWycieczek<<". "<<
     wczasy.nazwa<<" Kraj: "<<wczasy.destynacja_kraj<<" Miejscowosc: "<<wczasy.destynacja_miasto<<" Koszt: ";
 
     if (cenaAutokar<=cena) plik<<cenaAutokar<<"(Autokar) ";
@@ -221,26 +222,16 @@ void BiuroPodrozy::szukajObjazdowek(struct tm data, int dlugosc, float cena){
 
     for (unsigned int i=0;i<lista_objazdowek.size();i++){
             if (porownajDate(lista_objazdowek[i].data_rozpoczecia, data)) {
-
-                cout<<"data sie zgadza"<<endl;
-            }
-
-            /*
-        if ((lista_objazdowek[i].data_rozpoczecia.tm_year) >= data.tm_year) {
-            if (((lista_objazdowek[i].data_rozpoczecia.tm_mon) > data.tm_mon)     //Bardzo dlugi warunek dla miesiaca
-            || ((lista_objazdowek[i].data_rozpoczecia.tm_mon) == data.tm_mon
-            && (lista_objazdowek[i].data_rozpoczecia.tm_mday) >= data.tm_mday)){
-
-
-
-
-
-            }//koniec warunku dla miesiace
-        } //koniec warunku dla roku
-    }//petla przegladajaca wszystkie objazdowki z wektora */
+               if (obliczIloscDni(lista_objazdowek[i].data_zakonczenia, lista_objazdowek[i].data_rozpoczecia)<=dlugosc){
+                 if ((lista_objazdowek[i].kosztWycieczki)<=cena) {
+                         this->liczbaWycieczek++;
+                         this->drukujObjazdowke("plik.txt",lista_objazdowek[i]);
+                 }//warunek ceny
+               }//sprawdzenie warunku dlugosci objazdowki
+            } //sprawdzenie daty rozpoczecia
+    }
 }
-}
-
+/*
 struct tm BiuroPodrozy::dodajDate(struct tm &data, int dlugosc){
 
         switch (data.tm_mon){
@@ -281,7 +272,7 @@ struct tm BiuroPodrozy::obliczDate(int dni,struct tm &data, int dlugosc){
         }
         return data;
 }
-
+*/
 bool BiuroPodrozy::porownajDate(struct tm data1, struct tm data2){
 
     if((data1.tm_year)<(data2.tm_year)) return false;
@@ -312,5 +303,23 @@ double BiuroPodrozy::obliczIloscDni(struct tm data1, struct tm data2){
     double wynik = sekundy/86400;
     return wynik;
 
+
+}
+
+void BiuroPodrozy::drukujObjazdowke(char *sciezka, WycieczkaObjazdowa &objazd){
+
+    ofstream plik;
+    plik.open(sciezka, ios_base::app); //nadpisywanie pliku
+
+    plik<<this->liczbaWycieczek<<". "<<
+    objazd.nazwa<<" Kraje: ";
+    for (const string& x: objazd.lista_krajow) plik<< x<< " ";
+    plik<<"Miasta: ";
+   for (unsigned int i=0; i<objazd.lista_miast.size(); i++){
+       plik<<objazd.lista_miast[i]<<" ";
+    }
+
+   //plik<<objazd.kosztWycieczki<<endl;
+    plik.close();
 
 }

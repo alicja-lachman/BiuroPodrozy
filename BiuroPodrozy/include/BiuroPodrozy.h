@@ -28,7 +28,8 @@ class BiuroPodrozy
        void tworzWczasy(vector <char*> opis);
        void tworzObjazdowke(vector <char*> opis);
        void drukujWczasy(char *sciezka, Wczasy &wczasy,float cena, int mnoznik=1);
-       int liczbaWczasow;
+       void drukujObjazdowke(char *sciezka, WycieczkaObjazdowa &objazd);
+       int liczbaWycieczek;
 
 };
 
