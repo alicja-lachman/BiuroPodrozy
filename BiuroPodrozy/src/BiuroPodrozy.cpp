@@ -318,6 +318,9 @@ void BiuroPodrozy::drukujObjazdowke(char *sciezka, WycieczkaObjazdowa &objazd){
    for (unsigned int i=0; i<objazd.lista_miast.size(); i++){
        plik<<objazd.lista_miast[i]<<" ";
     }
+    plik<<"Koszt: "<<objazd.kosztWycieczki<<" Termin: "<<
+    objazd.data_rozpoczecia.tm_year<<"."<<objazd.data_rozpoczecia.tm_mon<<"."<<objazd.data_rozpoczecia.tm_mday<<" - "<<
+    objazd.data_zakonczenia.tm_year<<"."<<objazd.data_zakonczenia.tm_mon<<"."<<objazd.data_zakonczenia.tm_mday<<endl;
 
    //plik<<objazd.kosztWycieczki<<endl;
     plik.close();
