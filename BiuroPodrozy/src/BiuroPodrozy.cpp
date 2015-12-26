@@ -218,14 +218,32 @@ void BiuroPodrozy::drukujWczasy(char *sciezka, Wczasy &wczasy, float cena, int m
     plik.close();
 }
 
-void BiuroPodrozy::szukajObjazdowek(struct tm data, int dlugosc, float cena){
+void BiuroPodrozy::szukajObjazdowek(struct tm data, int dlugosc, float cena, char przelacznik){
 
     for (unsigned int i=0;i<lista_objazdowek.size();i++){
             if (porownajDate(lista_objazdowek[i].data_rozpoczecia, data)) {
                if (obliczIloscDni(lista_objazdowek[i].data_zakonczenia, lista_objazdowek[i].data_rozpoczecia)<=dlugosc){
                  if ((lista_objazdowek[i].kosztWycieczki)<=cena) {
-                         this->liczbaWycieczek++;
-                         this->drukujObjazdowke("plik.txt",lista_objazdowek[i]);
+                         switch(przelacznik){
+                             case 'o': {
+                                        this->liczbaWycieczek++;
+                                        this->drukujObjazdowke("plik.txt",lista_objazdowek[i]);
+                                        break;
+                                        }
+                            case 'l': {
+                                        cout<<"dobra objazdowka!!"<<endl;
+                                        for (int i=0; i<lista_wczasow.size();i++){
+                                            cout<<"przelacznik"<<endl;
+                                            std::set<string>::reverse_iterator rit;
+                                            rit=lista_objazdowek[i].lista_krajow.rbegin();
+
+                                            const char *cstr = (*rit).c_str();
+                                            cout<<cstr<<endl;
+                                            if (strcmp(lista_wczasow[i].destynacja_kraj, cstr)==0) cout<<"jest git"<<endl;
+                                        }
+                                        break;
+                                        }
+                         }
                  }//warunek ceny
                }//sprawdzenie warunku dlugosci objazdowki
             } //sprawdzenie daty rozpoczecia
@@ -315,14 +333,25 @@ void BiuroPodrozy::drukujObjazdowke(char *sciezka, WycieczkaObjazdowa &objazd){
     objazd.nazwa<<" Kraje: ";
     for (const string& x: objazd.lista_krajow) plik<< x<< " ";
     plik<<"Miasta: ";
-   for (unsigned int i=0; i<objazd.lista_miast.size(); i++){
-       plik<<objazd.lista_miast[i]<<" ";
-    }
+    for (unsigned int i=0; i<objazd.lista_miast.size(); i++) plik<<objazd.lista_miast[i]<<" ";
     plik<<"Koszt: "<<objazd.kosztWycieczki<<" Termin: "<<
     objazd.data_rozpoczecia.tm_year<<"."<<objazd.data_rozpoczecia.tm_mon<<"."<<objazd.data_rozpoczecia.tm_mday<<" - "<<
     objazd.data_zakonczenia.tm_year<<"."<<objazd.data_zakonczenia.tm_mon<<"."<<objazd.data_zakonczenia.tm_mday<<endl;
 
-   //plik<<objazd.kosztWycieczki<<endl;
     plik.close();
 
 }
+/*
+void BiuroPodrozy::szukajLaczonej(struct tm data, int dlugosc, float cena){
+
+    for (unsigned int i=0;i<lista_objazdowek.size();i++){
+            if (porownajDate(lista_objazdowek[i].data_rozpoczecia, data)) {
+               if (obliczIloscDni(lista_objazdowek[i].data_zakonczenia, lista_objazdowek[i].data_rozpoczecia)<=dlugosc){
+                 if ((lista_objazdowek[i].kosztWycieczki)<=cena)
+
+
+               }
+            }
+    }
+}
+*/

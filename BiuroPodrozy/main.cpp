@@ -21,7 +21,7 @@ int main(int argc, char **argv){
     data2.tm_mday=18;
     data2.tm_mon=12;
     data2.tm_year=2015;
-    biuro.szukajObjazdowek(data, 7, 3000);
+    biuro.szukajObjazdowek(data, 7, 3000,'l');
 
     //biuro.szukajWczasow(data, 14, 2300);
    /* }else

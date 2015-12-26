@@ -1,7 +1,7 @@
 #ifndef WYCIECZKAOBJAZDOWA_H
 #define WYCIECZKAOBJAZDOWA_H
 #include <vector>
-#include <unordered_set>
+#include <set>
 #include <Wycieczka.h>
 #include <string>
 
@@ -13,7 +13,7 @@ private:
         char dojazd[30];
         struct tm data_zakonczenia;
         vector <string> lista_miast;
-        unordered_set <string> lista_krajow;
+        set <string> lista_krajow;
     public:
         WycieczkaObjazdowa();
         virtual ~WycieczkaObjazdowa();

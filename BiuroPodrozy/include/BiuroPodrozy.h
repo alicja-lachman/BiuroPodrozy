@@ -16,7 +16,7 @@ class BiuroPodrozy
        vector <Wczasy> lista_wczasow;
        vector <WycieczkaObjazdowa> lista_objazdowek;
        void szukajWczasow(struct tm data, int dlugosc, float cena);
-       void szukajObjazdowek(struct tm data, int dlugosc, float cena);
+       void szukajObjazdowek(struct tm data, int dlugosc, float cena, char przelacznik);
        struct tm dodajDate(struct tm &data, int dlugosc);
        struct tm obliczDate(int dni,struct tm &data, int dlugosc);
        bool porownajDate(struct tm data1, struct tm data2);
