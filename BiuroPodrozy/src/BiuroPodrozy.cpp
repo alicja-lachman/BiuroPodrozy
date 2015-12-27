@@ -232,14 +232,14 @@ void BiuroPodrozy::szukajObjazdowek(struct tm data, int dlugosc, float cena, cha
                                         }
                             case 'l': {
                                         cout<<"dobra objazdowka!!"<<endl;
-                                        for (int i=0; i<lista_wczasow.size();i++){
+                                        for (int j=0; j<lista_wczasow.size();j++){
                                             cout<<"przelacznik"<<endl;
                                             std::set<string>::reverse_iterator rit;
                                             rit=lista_objazdowek[i].lista_krajow.rbegin();
 
                                             const char *cstr = (*rit).c_str();
                                             cout<<cstr<<endl;
-                                            if (strcmp(lista_wczasow[i].destynacja_kraj, cstr)==0) cout<<"jest git"<<endl;
+                                            if (strcmp(lista_wczasow[j].destynacja_kraj, cstr)==0) cout<<"jest git"<<endl;
                                         }
                                         break;
                                         }
