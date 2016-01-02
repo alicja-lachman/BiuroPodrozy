@@ -10,14 +10,14 @@ using namespace std;
 BiuroPodrozy::BiuroPodrozy()
 {
     this->liczbaWycieczek=0;
-    //ctor
+
 }
 
 BiuroPodrozy::~BiuroPodrozy()
 {
-    //dtor
+
 }
-/*Funkcja sprawdzajaca, czy dany plik opisuje wycieczke objazdow¹ czy wczasy */
+/*Funkcja sprawdzajaca, czy dany plik opisuje wycieczke objazdowa czy wczasy */
 //zmienic na cos w rodzaju PODZIAlDanych
 void BiuroPodrozy::interpretujDane(string zawartosc){
 
@@ -340,10 +340,12 @@ void BiuroPodrozy::sprawdzLaczona(WycieczkaObjazdowa &objazd, Wczasy &wczasy, in
      cout<<"wchodze"<<endl;
 
     if ((dlugosc - (obliczIloscDni(objazd.data_rozpoczecia,objazd.data_zakonczenia))) >= wczasy.dlugosc_turnusu) {
-        if ((objazd.kosztWycieczki + wczasy.kosztWycieczki) <= cena) {
-                this->liczbaWycieczek++;
-                this->drukujLaczona("plik.txt",objazd, wczasy);
-        }
+        if (porownajDate(wczasy.data_rozpoczecia,objazd.data_zakonczenia)){
+                if ((objazd.kosztWycieczki + wczasy.kosztWycieczki) <= cena) {
+                    this->liczbaWycieczek++;
+                    this->drukujLaczona("plik.txt",objazd, wczasy);
+                } //warunek ceny
+        } //warunek sprawdzajacy czy wczasy rozpoczynaja sie po objazdowce
     }//warunek sprawdzajacy dlugosc laczonej wycieczki
 }
 
