@@ -13,12 +13,9 @@ BiuroPodrozy::BiuroPodrozy()
 
 }
 
-BiuroPodrozy::~BiuroPodrozy()
-{
+BiuroPodrozy::~BiuroPodrozy(){}
 
-}
-/*Funkcja sprawdzajaca, czy dany plik opisuje wycieczke objazdowa czy wczasy */
-//zmienic na cos w rodzaju PODZIAlDanych
+//Funkcja sprawdzajaca, czy dany plik opisuje wycieczke objazdowa czy wczasy
 void BiuroPodrozy::interpretujDane(string zawartosc){
 
 vector <char*> dane;
@@ -27,38 +24,25 @@ char * pch;
 string pomocniczy;
 
     strcpy(cstr, zawartosc.c_str());
-    printf ("Splitting string \"%s\" into tokens:\n",cstr);
     pch = strtok (cstr," [],.-");     //podzielenie zawartosci pliku na tokeny
-
     while (pch != NULL){
-
-        printf ("%s\n",pch);
         dane.push_back(pch);    //umieszczenie kazdego tokena w wektorze 'dane'
         pch = strtok (NULL, "[] ,.-");
     }
-
     pomocniczy=dane.at(0);
 //sprawdzenie, czy mamy do czynienia z wycieczka objazdowa czy z wczasami
-    if(pomocniczy=="WP:"){
-        cout<<"To beda wczasy!!"<<endl;
-        this->tworzWczasy(dane);
-    }
-    else if (pomocniczy=="WO:"){
-        cout<<"Mamy objazdwoke!"<<endl;
-        this->tworzObjazdowke(dane);
-    }else
-     cout<<"cos sknocone"<<endl;
-     cout<<"nasz wektorek"<<lista_wczasow.size()<<endl;
-     cout<<"nasz drugi wektorek"<<lista_objazdowek.size()<<endl;
+    if(pomocniczy=="WP:") this->tworzWczasy(dane);
+    else if (pomocniczy=="WO:") this->tworzObjazdowke(dane);
+    else cout<<" Wykryto plik z nieznanym typem wycieczki"<<endl;
+
+    delete cstr;
     delete pch;
-
-
 }
+//funkcja czytajaca wszystkie pliki z ofertami w danym folderze
+void BiuroPodrozy::czytajPliki(char *folder){
 
-void BiuroPodrozy::czytajPlik(char *folder){
-
-struct dirent * plik;  //korzystanie z biblioteki POSIX
-DIR * sciezka;
+struct dirent *plik;  //korzystanie z biblioteki POSIX
+DIR *sciezka;
 
     if((sciezka = opendir(folder))) {    //otworzenie katalogu z ofertami
         while((plik = readdir(sciezka))){
@@ -68,24 +52,23 @@ DIR * sciezka;
              strcpy(pelna_sciezka,folder);
              strcat(pelna_sciezka,plik->d_name);
 
-             ifstream NowyPlik;
-             NowyPlik.open(pelna_sciezka);   //otworzenie pliku
-
-             while(NowyPlik.good()){
-                cout <<"Jestem w pliku!!"<<endl;
-                getline(NowyPlik, zawartosc_pliku);
-                cout<<zawartosc_pliku<<endl;
+             ifstream nowyPlik;
+             nowyPlik.open(pelna_sciezka);   //otworzenie pliku
+             while(nowyPlik.good()){
+                getline(nowyPlik, zawartosc_pliku);
                 this->interpretujDane(zawartosc_pliku);
              }
-             NowyPlik.close();
+             nowyPlik.close();
           }
           closedir( sciezka );
     }
-    else
-    printf( "Blad otwarcia sciezki do katalogu!");
-
+    else{
+        printf( "Blad otwarcia sciezki do katalogu!");
+        exit(0);
+    }
 }
 
+//Funkcja tworzaca nowe wczasy i dodajace je do wektora wczasow
 void BiuroPodrozy::tworzWczasy(vector <char*> opis){
 
     Wczasy noweWczasy;
@@ -93,7 +76,14 @@ void BiuroPodrozy::tworzWczasy(vector <char*> opis){
     noweWczasy.data_rozpoczecia.tm_year=atoi(opis.at(2));
     noweWczasy.data_rozpoczecia.tm_mon=atoi(opis.at(3));
     noweWczasy.data_rozpoczecia.tm_mday=atoi(opis.at(4));
-    noweWczasy.dlugosc_turnusu=atoi(opis.at(5));
+    try{
+        if (atoi(opis.at(5))==0) throw 1;
+        noweWczasy.dlugosc_turnusu=atoi(opis.at(5));
+    }
+    catch(int wyjatek){
+       cout<<"wykryto blad w dlugosci turnusu jednych z wczasow!"<<endl;
+       return;
+    }
     strcpy(noweWczasy.destynacja_miasto,opis.at(6));
     strcpy(noweWczasy.destynacja_kraj,opis.at(7));
     noweWczasy.kosztWycieczki=atoi(opis.at(8));
@@ -167,7 +157,7 @@ this->lista_objazdowek.push_back(nowaObjazdowka);
         strcpy(objazdowka.dojazd,opis.at(i));
     }else cout<<"Cos sknocone!"<<endl;
 }
-
+//ZMIENIC WARUNEK!
 void BiuroPodrozy::szukajWczasow(struct tm data, int dlugosc, float cena){
 
     for (unsigned int i=0;i<lista_wczasow.size();i++){
@@ -175,9 +165,8 @@ void BiuroPodrozy::szukajWczasow(struct tm data, int dlugosc, float cena){
             if (((lista_wczasow[i].data_rozpoczecia.tm_mon) > data.tm_mon)     //Bardzo dlugi warunek dla miesiaca
             || ((lista_wczasow[i].data_rozpoczecia.tm_mon) == data.tm_mon
             && (lista_wczasow[i].data_rozpoczecia.tm_mday) >= data.tm_mday)){
-                cout<<"yay";
                 if((lista_wczasow[i].dlugosc_turnusu) <= dlugosc){
-                 if (((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_autokar)<=cena) ||
+                  if (((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_autokar)<=cena) ||
                      ((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_samolot)<=cena) ||
                      ((lista_wczasow[i].kosztWycieczki)<=cena)){
                         this->liczbaWycieczek++;

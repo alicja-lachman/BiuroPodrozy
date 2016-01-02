@@ -12,7 +12,7 @@ class BiuroPodrozy
     public:
        BiuroPodrozy();
        virtual ~BiuroPodrozy();
-       void czytajPlik(char *folder);
+       void czytajPliki(char *folder);
        vector <Wczasy> lista_wczasow;
        vector <WycieczkaObjazdowa> lista_objazdowek;
        void szukajWczasow(struct tm data, int dlugosc, float cena);
