@@ -135,7 +135,7 @@ void BiuroPodrozy::tworzObjazdowke(vector <char*> opis){
 
 
         }else{
-
+            nowaObjazdowka.ostatni_kraj=opis.at(i-1);
             nowaObjazdowka.kosztWycieczki=atoi(opis.at(i));
             BiuroPodrozy::rodzajTransportu2(opis, i+1, nowaObjazdowka);
         }
@@ -222,7 +222,7 @@ void BiuroPodrozy::szukajObjazdowek(struct tm data, int dlugosc, float cena, cha
 
     for (unsigned int i=0;i<lista_objazdowek.size();i++){
             if (porownajDate(lista_objazdowek[i].data_rozpoczecia, data)) {
-               if (obliczIloscDni(lista_objazdowek[i].data_zakonczenia, lista_objazdowek[i].data_rozpoczecia)<=dlugosc){
+               if (obliczIloscDni(lista_objazdowek[i].data_rozpoczecia,lista_objazdowek[i].data_zakonczenia)<=dlugosc){
                  if ((lista_objazdowek[i].kosztWycieczki)<=cena) {
                          switch(przelacznik){
                              case 'o': {
@@ -233,13 +233,8 @@ void BiuroPodrozy::szukajObjazdowek(struct tm data, int dlugosc, float cena, cha
                             case 'l': {
                                         cout<<"dobra objazdowka!!"<<endl;
                                         for (int j=0; j<lista_wczasow.size();j++){
-                                            cout<<"przelacznik"<<endl;
-                                            std::set<string>::reverse_iterator rit;
-                                            rit=lista_objazdowek[i].lista_krajow.rbegin();
-
-                                            const char *cstr = (*rit).c_str();
-                                            cout<<cstr<<endl;
-                                            if (strcmp(lista_wczasow[j].destynacja_kraj, cstr)==0) cout<<"jest git"<<endl;
+                                            const char *cstr = (lista_objazdowek[i].ostatni_kraj).c_str();
+                                            if (strcmp(lista_wczasow[j].destynacja_kraj, cstr)==0) this->sprawdzLaczona(lista_objazdowek[i],lista_wczasow[j],dlugosc, cena);
                                         }
                                         break;
                                         }
@@ -341,17 +336,34 @@ void BiuroPodrozy::drukujObjazdowke(char *sciezka, WycieczkaObjazdowa &objazd){
     plik.close();
 
 }
-/*
-void BiuroPodrozy::szukajLaczonej(struct tm data, int dlugosc, float cena){
+void BiuroPodrozy::sprawdzLaczona(WycieczkaObjazdowa &objazd, Wczasy &wczasy, int dlugosc, float cena){
+     cout<<"wchodze"<<endl;
 
-    for (unsigned int i=0;i<lista_objazdowek.size();i++){
-            if (porownajDate(lista_objazdowek[i].data_rozpoczecia, data)) {
-               if (obliczIloscDni(lista_objazdowek[i].data_zakonczenia, lista_objazdowek[i].data_rozpoczecia)<=dlugosc){
-                 if ((lista_objazdowek[i].kosztWycieczki)<=cena)
-
-
-               }
-            }
-    }
+    if ((dlugosc - (obliczIloscDni(objazd.data_rozpoczecia,objazd.data_zakonczenia))) >= wczasy.dlugosc_turnusu) {
+        if ((objazd.kosztWycieczki + wczasy.kosztWycieczki) <= cena) {
+                this->liczbaWycieczek++;
+                this->drukujLaczona("plik.txt",objazd, wczasy);
+        }
+    }//warunek sprawdzajacy dlugosc laczonej wycieczki
 }
-*/
+
+void BiuroPodrozy::drukujLaczona(char *sciezka, WycieczkaObjazdowa &objazd, Wczasy &wczasy){
+
+    ofstream plik;
+    plik.open(sciezka, ios_base::app); //nadpisywanie pliku
+
+    plik<<this->liczbaWycieczek<<". "<<"Wycieczka laczona "<<
+    objazd.nazwa<<" Kraje: ";
+    for (const string& x: objazd.lista_krajow) plik<< x<< " ";
+    plik<<"Miasta: ";
+    for (unsigned int i=0; i<objazd.lista_miast.size(); i++) plik<<objazd.lista_miast[i]<<" ";
+    plik<<" Termin: "<<
+    objazd.data_rozpoczecia.tm_year<<"."<<objazd.data_rozpoczecia.tm_mon<<"."<<objazd.data_rozpoczecia.tm_mday<<" - "<<
+    objazd.data_zakonczenia.tm_year<<"."<<objazd.data_zakonczenia.tm_mon<<"."<<objazd.data_zakonczenia.tm_mday;
+    plik<<" Wczasy w "<<wczasy.destynacja_kraj<<" Miasto: "<<wczasy.destynacja_miasto<<" Termin: "<<
+    wczasy.data_rozpoczecia.tm_year<<"."<<wczasy.data_rozpoczecia.tm_mon<<"."<<wczasy.data_rozpoczecia.tm_mday<<
+    " ("<<wczasy.dlugosc_turnusu<<" dni)'"<<" Koszt: "<<(objazd.kosztWycieczki+wczasy.kosztWycieczki)<<endl;
+
+    plik.close();
+
+}

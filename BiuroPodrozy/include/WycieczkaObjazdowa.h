@@ -14,6 +14,7 @@ private:
         struct tm data_zakonczenia;
         vector <string> lista_miast;
         set <string> lista_krajow;
+        string ostatni_kraj;
     public:
         WycieczkaObjazdowa();
         virtual ~WycieczkaObjazdowa();

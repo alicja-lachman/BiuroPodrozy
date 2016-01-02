@@ -30,6 +30,8 @@ class BiuroPodrozy
        void drukujWczasy(char *sciezka, Wczasy &wczasy,float cena, int mnoznik=1);
        void drukujObjazdowke(char *sciezka, WycieczkaObjazdowa &objazd);
        int liczbaWycieczek;
+       void sprawdzLaczona(WycieczkaObjazdowa &objazd, Wczasy &wczasy, int dlugosc, float cena);
+       void drukujLaczona(char *sciezka, WycieczkaObjazdowa &objazd, Wczasy &wczasy);
 
 };
 
