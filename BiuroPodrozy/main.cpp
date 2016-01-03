@@ -15,6 +15,7 @@ struct tm wczytajDate(char* data_wczytana){
 };
 
 int main(int argc, char **argv){
+
     char *sciezka;
     char *plik_wyjsciowy;
     char *rodzaj_wycieczki;
@@ -42,8 +43,12 @@ int main(int argc, char **argv){
         else if (strcmp(rodzaj_wycieczki,"l")==0) biuro.szukajObjazdowek(data,dlugosc,cena,'l');
         else if (strcmp(rodzaj_wycieczki,"d")==0) {
             biuro.szukajObjazdowek(data,dlugosc,cena,'o');
+            biuro.szukajObjazdowek(data, dlugosc, cena, 'l');
             biuro.szukajWczasow(data, dlugosc, cena);
         }
+        cout<<"Oferta biura podrozy zostala wygenerowana i znajduje sie w pliku: "<<plik_wyjsciowy<<endl;
+        cout<<"Znaleziono "<<
+        biuro.podajIlosc()<<" wycieczek spelniajacych dane kryteria"<<endl;
     }else
         cout<<"Zla ilosc argumentow wywolania programu!! Nastepuje zamkniecie programu!"<<endl;
     return 0;
