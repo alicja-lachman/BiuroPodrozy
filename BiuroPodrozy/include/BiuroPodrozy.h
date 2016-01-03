@@ -13,8 +13,8 @@ class BiuroPodrozy
        BiuroPodrozy();
        virtual ~BiuroPodrozy();
        void czytajPliki(char *folder);
-       vector <Wczasy> lista_wczasow;
-       vector <WycieczkaObjazdowa> lista_objazdowek;
+       vector <Wczasy*> lista_wczasow;
+       vector <WycieczkaObjazdowa*> lista_objazdowek;
        void szukajWczasow(struct tm data, int dlugosc, float cena);
        void szukajObjazdowek(struct tm data, int dlugosc, float cena, char przelacznik);
        struct tm dodajDate(struct tm &data, int dlugosc);
@@ -27,11 +27,11 @@ class BiuroPodrozy
        void interpretujDane(string zawartosc);
        void tworzWczasy(vector <char*> opis);
        void tworzObjazdowke(vector <char*> opis);
-       void drukujWczasy(char *sciezka, Wczasy &wczasy,float cena, int mnoznik=1);
-       void drukujObjazdowke(char *sciezka, WycieczkaObjazdowa &objazd);
+       void drukujWczasy(char *sciezka, Wczasy *wczasy,float cena, int mnoznik=1);
+       void drukujObjazdowke(char *sciezka, WycieczkaObjazdowa *objazd);
        int liczbaWycieczek;
-       void sprawdzLaczona(WycieczkaObjazdowa &objazd, Wczasy &wczasy, int dlugosc, float cena);
-       void drukujLaczona(char *sciezka, WycieczkaObjazdowa &objazd, Wczasy &wczasy);
+       void sprawdzLaczona(WycieczkaObjazdowa *objazd, Wczasy *wczasy, int dlugosc, float cena);
+       void drukujLaczona(char *sciezka, WycieczkaObjazdowa *objazd, Wczasy *wczasy);
 
 };
 
