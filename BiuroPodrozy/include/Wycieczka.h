@@ -11,7 +11,7 @@ class Wycieczka
     private:
         char nazwa[30];
         struct tm data_rozpoczecia;
-        int kosztWycieczki;
+        float kosztWycieczki;
 };
 
 #endif // WYCIECZKA_H

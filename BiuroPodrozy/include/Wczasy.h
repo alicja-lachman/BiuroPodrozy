@@ -7,9 +7,9 @@ using namespace std;
 class Wczasy : public Wycieczka
 {
 private:
-        int koszt_autokar;
-        int koszt_samolot;
-        int koszt_wlasny;
+        float koszt_autokar;
+        float koszt_samolot;
+        float koszt_wlasny;
         int dlugosc_turnusu;
         char destynacja_kraj[30];
         char destynacja_miasto[30];

@@ -29,10 +29,8 @@ class BiuroPodrozy
        int liczbaWycieczek;
        void sprawdzLaczona(WycieczkaObjazdowa &objazd, Wczasy &wczasy, int dlugosc, float cena);
        void drukujLaczona(char *sciezka, WycieczkaObjazdowa &objazd, Wczasy &wczasy);
-       struct tm dodajDate(struct tm &data, int dlugosc);
-       struct tm obliczDate(int dni,struct tm &data, int dlugosc);
        bool porownajDate(struct tm data1, struct tm data2);
-       double obliczIloscDni(struct tm data1, struct tm data2);
+       int obliczIloscDni(struct tm data1, struct tm data2);
 };
 
 #endif // BIUROPODROZY_H

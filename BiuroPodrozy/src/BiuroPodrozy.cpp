@@ -23,7 +23,7 @@ void BiuroPodrozy::interpretujDane(string zawartosc){
 
 vector <char*> dane;
 char *cstr = new char[zawartosc.length()+1];
-char * pch;
+char *pch;
 string pomocniczy;
 
     strcpy(cstr, zawartosc.c_str());
@@ -39,7 +39,6 @@ string pomocniczy;
     else cout<<" Wykryto plik z nieznanym typem wycieczki"<<endl;
 
     delete cstr;
-    delete pch;
 }
 //funkcja czytajaca wszystkie pliki z ofertami w danym folderze
 void BiuroPodrozy::czytajPliki(char *folder){
@@ -148,7 +147,7 @@ void BiuroPodrozy::tworzObjazdowke(vector <char*> opis){
             nowaObjazdowka.ostatni_kraj=opis.at(i-1);
             try{
                 if (atoi(opis.at(i))==0) throw 1;
-                nowaObjazdowka.kosztWycieczki=atoi(opis.at(i));
+                nowaObjazdowka.kosztWycieczki=atof(opis.at(i));
             }
             catch(int wyjatek){
                 return;
@@ -171,11 +170,11 @@ this->lista_objazdowek.push_back(nowaObjazdowka);
      string pomocniczy=opis.at(i);
 
         if (pomocniczy=="Autokar") {
-            wczasy.koszt_autokar=atoi(opis.at(i+1));
+            wczasy.koszt_autokar=atof(opis.at(i+1));
         }else if (pomocniczy=="Samolot") {
-            wczasy.koszt_samolot=atoi(opis.at(i+1));
+            wczasy.koszt_samolot=atof(opis.at(i+1));
         }else if (pomocniczy=="Wlasny") {
-            wczasy.koszt_wlasny=atoi(opis.at(i+1));
+            wczasy.koszt_wlasny=atof(opis.at(i+1));
         }else throw 2;
 }
 //zamienic na wirtualnaaaaa
@@ -189,7 +188,6 @@ this->lista_objazdowek.push_back(nowaObjazdowka);
         strcpy(objazdowka.dojazd,opis.at(i));
     }else throw 1;
 }
-//ZMIENIC WARUNEK!
 void BiuroPodrozy::szukajWczasow(struct tm data, int dlugosc, float cena){
 
     for (unsigned int i=0;i<lista_wczasow.size();i++){
@@ -260,48 +258,7 @@ void BiuroPodrozy::szukajObjazdowek(struct tm data, int dlugosc, float cena, cha
             } //sprawdzenie daty rozpoczecia
     }
 }
-/*
-struct tm BiuroPodrozy::dodajDate(struct tm &data, int dlugosc){
 
-        switch (data.tm_mon){
-        case 1:
-        case 3:
-        case 5:
-        case 7:
-        case 8:
-        case 10:
-        case 12:
-            data=this->obliczDate(31, data, dlugosc);
-            break;
-        case 2:
-            if ((data.tm_mon%4)==0) data=this->obliczDate(29,data,dlugosc);
-            else data=this->obliczDate(28,data, dlugosc);
-            break;
-        case 4:
-        case 6:
-        case 9:
-        case 11:
-            data=this->obliczDate(30,data, dlugosc);
-            break;
-        }
-
-}
-//tylko do 30/31 dni!
-struct tm BiuroPodrozy::obliczDate(int dni,struct tm &data, int dlugosc){
-
-        if((dni-data.tm_mday)>dlugosc){
-            data.tm_mday = data.tm_mday + dlugosc;
-        }else if (data.tm_mon==12){
-            data.tm_year++;
-            data.tm_mon=1;
-            data.tm_mday=dlugosc-(dni-data.tm_mday);
-        }else {
-            data.tm_mon++;
-            data.tm_mday = dlugosc-(dni-data.tm_mday);
-        }
-        return data;
-}
-*/
 bool BiuroPodrozy::porownajDate(struct tm data1, struct tm data2){
 
     if((data1.tm_year)<(data2.tm_year)) return false;
@@ -313,7 +270,7 @@ bool BiuroPodrozy::porownajDate(struct tm data1, struct tm data2){
 
 }
 //Funkcja obliczajaca ilosc dni pomiedzy dwiema datami
-double BiuroPodrozy::obliczIloscDni(struct tm data1, struct tm data2){
+int BiuroPodrozy::obliczIloscDni(struct tm data1, struct tm data2){
 
     struct tm pomoc1, pomoc2;
     time_t rawtime;
@@ -329,7 +286,7 @@ double BiuroPodrozy::obliczIloscDni(struct tm data1, struct tm data2){
     pomoc2.tm_mday = data2.tm_mday;
 
     double sekundy = difftime(mktime(&pomoc2),mktime(&pomoc1));
-    double wynik = sekundy/86400;
+    int wynik = sekundy/86400;
     return wynik;
 
 

@@ -1,6 +1,5 @@
 #include <iostream>
 #include "BiuroPodrozy.h"
-#include <vector>
 #include <stdlib.h>
 using namespace std;
 
@@ -51,5 +50,9 @@ int main(int argc, char **argv){
         biuro.podajIlosc()<<" wycieczek spelniajacych dane kryteria"<<endl;
     }else
         cout<<"Zla ilosc argumentow wywolania programu!! Nastepuje zamkniecie programu!"<<endl;
+
+ int a = 5;
+ int b= 6;
+ cout<<(a<b)<<endl;
     return 0;
 }
