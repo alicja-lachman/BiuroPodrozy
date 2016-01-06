@@ -1,78 +1,15 @@
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
-1. Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.17
-2. Dookola Kraje: Algieria Malta Miasta: Huc Bydgoszcz Koszt: 1500 Termin: 2015.12.11 - 2015.12.15
-3. Wycieczka laczona Dookola Kraje: Francja Malta Miasta: Huc Bydgoszcz  Termin: 2015.12.11 - 2015.12.17 Wczasy w Francja Miasto: Algier Termin: 2015.12.17 (7 dni)' Koszt: 3000
-4. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 1900(Autokar) 1900(Samolot) 1500(Dojazd wlasny)  Termin: 2015.12.17 (7 dni)
-5. Algieria Kraj: Francja Miejscowosc: Algier Koszt: 3000(Dojazd wlasny)  Termin: 2015.12.17 (14 dni)
-6. Algieria Kraj: Algieria Miejscowosc: Algier Koszt: 1500(Autokar) 2200(Samolot) 1000(Dojazd wlasny)  Termin: 2015.12.17 (12 dni)
+1. Wlochy Kraj: Wlochy Miejscowosc: Rimini Koszt: 4300(Autokar) 4800(Samolot) 4000(Dojazd wlasny)  Termin: 2016.1.12 (14 dni)
+2. Wlochy Kraj: Wlochy Miejscowosc: Rimini Koszt: 2300(Autokar) 2800(Samolot) 2000(Dojazd wlasny)  Termin: 2016.1.12 (7 dni)
+3. Turcja Kraj: Turcja Miejscowosc: Istambul Koszt: 3800(Autokar) 4200(Samolot) 3000(Dojazd wlasny)  Termin: 2016.1.17 (8 dni)
+4. Slonecznie Kraj: Wlochy Miejscowosc: Florencja Koszt: 4500(Autokar) 4400(Samolot) 3600(Dojazd wlasny)  Termin: 2016.1.13 (12 dni)
+5. Slonecznie Kraj: Wlochy Miejscowosc: Florencja Koszt: 2700(Autokar) 2600(Samolot) 1800(Dojazd wlasny)  Termin: 2016.1.13 (6 dni)
+6. Pomorze Kraj: Polska Miejscowosc: Gdansk Koszt: 2400(Autokar) 2200(Samolot) 2000(Dojazd wlasny)  Termin: 2016.2.17 (14 dni)
+7. Pomorze Kraj: Polska Miejscowosc: Gdansk Koszt: 1400(Autokar) 1200(Samolot) 1000(Dojazd wlasny)  Termin: 2016.2.17 (7 dni)
+8. Sasiedzi Kraj: Czechy Miejscowosc: Praga Koszt: 2300(Autokar) 2200(Samolot) 2100(Dojazd wlasny)  Termin: 2016.1.18 (15 dni)
+9. Sasiedzi Kraj: Czechy Miejscowosc: Praga Koszt: 1600(Autokar) 1500(Samolot) 1400(Dojazd wlasny)  Termin: 2016.1.18 (10 dni)
+10. Sasiedzi Kraj: Czechy Miejscowosc: Praga Koszt: 900(Autokar) 800(Samolot) 700(Dojazd wlasny)  Termin: 2016.1.18 (5 dni)
+11. Tropiki Kraj: Hiszpania Miejscowosc: Sewilla Koszt: 1200(Autokar) 1600(Samolot) 1000(Dojazd wlasny)  Termin: 2016.1.17 (15 dni)
+1. Dookola Kraje: Malta Niemcy Polska Miasta: Huc Katowice Warszawa Berlin Wroclaw Koszt: 1850 Termin: 2016.1.17 - 2016.1.22
+2. Srodziemie Kraje: Andora Francja Wlochy Miasta: Rzym Paryz Marsylia Andora Koszt: 2500 Termin: 2016.2.2 - 2016.2.15
+3. Okolice Kraje: Anglia Polska Miasta: Zernica Gliwice Wroclaw Warszawa Londyn Koszt: 2100 Termin: 2016.1.17 - 2016.1.25
+4. Zachod Kraje: Czechy Niemcy Polska Miasta: Praga Wroclaw Gdansk Berlin Olomuniec Koszt: 1450 Termin: 2016.1.11 - 2016.1.17

@@ -27,10 +27,10 @@ char *pch;
 string pomocniczy;
 
     strcpy(cstr, zawartosc.c_str());
-    pch = strtok (cstr," [],.-");     //podzielenie zawartosci pliku na tokeny
+    pch = strtok (cstr," [], .-");     //podzielenie zawartosci pliku na tokeny
     while (pch != NULL){
         dane.push_back(pch);    //umieszczenie kazdego tokena w wektorze 'dane'
-        pch = strtok (NULL, "[] ,.-");
+        pch = strtok (NULL, "[], .-");
     }
     pomocniczy=dane.at(0);
 //sprawdzenie, czy mamy do czynienia z wycieczka objazdowa czy z wczasami
@@ -192,24 +192,15 @@ void BiuroPodrozy::szukajWczasow(struct tm data, int dlugosc, float cena){
 
     for (unsigned int i=0;i<lista_wczasow.size();i++){
         if (porownajDate(lista_wczasow[i].data_rozpoczecia,data)){
-                if((lista_wczasow[i].dlugosc_turnusu) <= dlugosc){
-                  if (((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_autokar)<=cena) ||
-                     ((lista_wczasow[i].kosztWycieczki)+(lista_wczasow[i].koszt_samolot)<=cena) ||
-                     ((lista_wczasow[i].kosztWycieczki)<=cena)){
-                        this->liczbaWycieczek++;
-                        this->drukujWczasy("plik.txt", lista_wczasow[i], cena);
-
                         int mnoznik=(dlugosc/lista_wczasow[i].dlugosc_turnusu);
-                        if(mnoznik>1) {
+                        for(;mnoznik>=1;mnoznik--) {
                                 if (((lista_wczasow[i].kosztWycieczki)*mnoznik+(lista_wczasow[i].koszt_autokar)<=cena) ||
                                 ((lista_wczasow[i].kosztWycieczki)*mnoznik+(lista_wczasow[i].koszt_samolot)<=cena) ||
                                 ((lista_wczasow[i].kosztWycieczki)*mnoznik<=cena)){
                                     this->liczbaWycieczek++;
-                                    this->drukujWczasy("plik.txt",lista_wczasow[i],cena, (dlugosc/lista_wczasow[i].dlugosc_turnusu));
+                                    this->drukujWczasy("plik.txt",lista_wczasow[i],cena, mnoznik);
                                 } //warunek cenowy dla wielokrotnego turnusu
-                        } //sprawdzenie, czy mozna rozwazac wielokrotnosc turnusu
-                     } //spelniony ktorys warunek ceny
-                }//koniec warunku sprawdzajacego dlugosc turnusu
+                        } //sprawdzenie lacznie z wielokrotnoscia turnusow
             } // koniec warunku sprawdzajacego date
     }//koniec petli sprawdzajacej wszystkie elementy wektora
 }
@@ -335,7 +326,7 @@ void BiuroPodrozy::drukujLaczona(char *sciezka, WycieczkaObjazdowa &objazd, Wcza
     objazd.data_zakonczenia.tm_year<<"."<<objazd.data_zakonczenia.tm_mon<<"."<<objazd.data_zakonczenia.tm_mday;
     plik<<" Wczasy w "<<wczasy.destynacja_kraj<<" Miasto: "<<wczasy.destynacja_miasto<<" Termin: "<<
     wczasy.data_rozpoczecia.tm_year<<"."<<wczasy.data_rozpoczecia.tm_mon<<"."<<wczasy.data_rozpoczecia.tm_mday<<
-    " ("<<wczasy.dlugosc_turnusu<<" dni)'"<<" Koszt: "<<(objazd.kosztWycieczki+wczasy.kosztWycieczki)<<endl;
+    " ("<<wczasy.dlugosc_turnusu<<" dni)"<<" Koszt: "<<(objazd.kosztWycieczki+wczasy.kosztWycieczki)<<endl;
 
     plik.close();
 

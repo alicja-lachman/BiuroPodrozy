@@ -51,8 +51,5 @@ int main(int argc, char **argv){
     }else
         cout<<"Zla ilosc argumentow wywolania programu!! Nastepuje zamkniecie programu!"<<endl;
 
- int a = 5;
- int b= 6;
- cout<<(a<b)<<endl;
     return 0;
 }
