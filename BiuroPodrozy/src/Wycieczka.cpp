@@ -5,11 +5,14 @@
 Wycieczka::Wycieczka()
 {
     strcpy(this->nazwa,"probna");
-    //ctor
+    data_rozpoczecia.tm_mday=1;
+    data_rozpoczecia.tm_mon=1;
+    data_rozpoczecia.tm_year=1902;
+    kosztWycieczki=0;
 }
 
 Wycieczka::~Wycieczka()
 {
-    //dtor
+
 }
 
