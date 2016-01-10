@@ -15,8 +15,8 @@ private:
         vector <string> lista_miast;
         set <string> lista_krajow;
         string ostatni_kraj;
-    public:
         WycieczkaObjazdowa();
+    public:
         virtual ~WycieczkaObjazdowa();
         friend class BiuroPodrozy;
 };

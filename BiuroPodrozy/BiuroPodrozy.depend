@@ -1,35 +1,39 @@
 # depslib dependency file v1.0
-1451991159 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\main.cpp
+1452426879 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\main.cpp
 	<iostream>
 	"BiuroPodrozy.h"
 	<stdlib.h>
 
-1452118695 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wczasy.cpp
+1452430583 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wczasy.cpp
 	"Wczasy.h"
 	<string.h>
+	<iostream>
 
-1451910003 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wczasy.h
+1452429579 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wczasy.h
 	<Wycieczka.h>
 	<vector>
 
-1451910002 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczka.h
+1452430007 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczka.h
 	<time.h>
+	<string>
+	<iostream>
 
-1452118879 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczka.cpp
+1452430007 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczka.cpp
 	"Wycieczka.h"
 	<string.h>
+	<iostream>
 
-1452118817 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczkaobjazdowa.cpp
+1452430236 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczkaobjazdowa.cpp
 	"WycieczkaObjazdowa.h"
 	<string.h>
 
-1451738635 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczkaobjazdowa.h
+1452162672 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczkaobjazdowa.h
 	<vector>
 	<set>
 	<Wycieczka.h>
 	<string>
 
-1452117976 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\biuropodrozy.cpp
+1452431606 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\biuropodrozy.cpp
 	"BiuroPodrozy.h"
 	<string.h>
 	<iostream>
@@ -38,7 +42,7 @@
 	<dirent.h>
 	<stdlib.h>
 
-1451909100 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\biuropodrozy.h
+1452431459 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\biuropodrozy.h
 	"Wczasy.h"
 	"WycieczkaObjazdowa.h"
 	<string.h>
