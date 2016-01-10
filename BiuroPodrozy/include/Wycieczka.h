@@ -12,7 +12,7 @@ class Wycieczka
         float kosztWycieczki;
     public:
         Wycieczka(std::string nazwa1, struct tm data_rozp, float koszt_wyc);
-        //Wycieczka();
+        Wycieczka();
 
         virtual ~Wycieczka();
         friend class BiuroPodrozy;

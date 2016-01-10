@@ -44,12 +44,14 @@ WycieczkaObjazdowa *wskaznik_objazd;
     pomocniczy=dane.at(0);
 //sprawdzenie, czy mamy do czynienia z wycieczka objazdowa czy z wczasami
     if(pomocniczy=="WP:"){
-            //this->tworzWczasy(dane);
             wskaznik_wczasy=this->tworzWczasy(dane);
             lista_wycieczek.push_back(wskaznik_wczasy);
             cout<<wskaznik_wczasy->nazwa<<endl;
     }
-   // else if (pomocniczy=="WO:") this->tworzObjazdowke(dane);
+    else if (pomocniczy=="WO:") {
+            wskaznik_objazd=this->tworzObjazdowke(dane);
+            lista_wycieczek.push_back(wskaznik_objazd);
+    }
     else cout<<" Wykryto plik z nieznanym typem wycieczki"<<endl;
 
     delete cstr;
@@ -145,56 +147,71 @@ Wczasy* BiuroPodrozy::tworzWczasy(vector <char*> opis){
    wskaznik_wczasy=new Wczasy(nazwa, data_rozp, dlugosc, destynacja_miasto, destynacja_kraj, koszt_wycieczki, koszt_autokar, koszt_samolot, koszt_wlasny);
    return wskaznik_wczasy;
 }
-/*
-//Funkcja dodajaca objazdowke z pliku do wektora objazdowek
-void BiuroPodrozy::tworzObjazdowke(vector <char*> opis){
-    WycieczkaObjazdowa nowaObjazdowka;
 
-    strcpy(nowaObjazdowka.nazwa,opis.at(1));
+//Funkcja dodajaca objazdowke z pliku do wektora objazdowek
+WycieczkaObjazdowa* BiuroPodrozy::tworzObjazdowke(vector <char*> opis){
+    WycieczkaObjazdowa *wskaznik;
+    string nazwa;
+    struct tm data_rozp;
+    struct tm data_zak;
+    float koszt_wyc;
+    string dojazd;
+    vector<string>lista_miast;
+    set<string>lista_krajow;
+    string ostatni_kraj;
+
+    nazwa.assign(opis.at(1));
     try{
         for (int i=2;i<8;i++){
             if (atoi(opis.at(i))==0) throw 1;
         }
-        nowaObjazdowka.data_rozpoczecia.tm_year=atoi(opis.at(2));
-        nowaObjazdowka.data_rozpoczecia.tm_mon=atoi(opis.at(3));
-        nowaObjazdowka.data_rozpoczecia.tm_mday=atoi(opis.at(4));
-        nowaObjazdowka.data_zakonczenia.tm_year=atoi(opis.at(5));
-        nowaObjazdowka.data_zakonczenia.tm_mon=atoi(opis.at(6));
-        nowaObjazdowka.data_zakonczenia.tm_mday=atoi(opis.at(7));
+        data_rozp.tm_year=atoi(opis.at(2));
+        data_rozp.tm_mon=atoi(opis.at(3));
+        data_rozp.tm_mday=atoi(opis.at(4));
+        data_zak.tm_year=atoi(opis.at(5));
+        data_zak.tm_mon=atoi(opis.at(6));
+        data_zak.tm_mday=atoi(opis.at(7));
     }
     catch (int wyjatek){
         cout<<"Zly format daty! Ta objazdowka zostaje pominieta!"<<endl;
-        return;
+        //return;
     }
-    int ilosc_danych=opis.size();
 
-    for (int i=8; i<(ilosc_danych-1); i=i+2){
+    for (int i=8; i<((opis.size())-1); i=i+2){
         if (atoi(opis.at(i))==0){
             string pomoc=opis.at(i);
             string pomoc2=opis.at(i+1);
-            nowaObjazdowka.lista_miast.push_back(pomoc);
-            nowaObjazdowka.lista_krajow.insert(pomoc2);
+            lista_miast.push_back(pomoc);
+            lista_krajow.insert(pomoc2);
         }else{
-            nowaObjazdowka.ostatni_kraj=opis.at(i-1);
+            ostatni_kraj.assign(opis.at(i-1));
             try{
                 if (atoi(opis.at(i))==0) throw 1;
-                nowaObjazdowka.kosztWycieczki=atof(opis.at(i));
+                koszt_wyc=atof(opis.at(i));
             }
             catch(int wyjatek){
-                return;
+               // return;
             }
             try{
-                this->rodzajTransportu2(opis, i+1, nowaObjazdowka);
+                string pomocniczy=opis.at(i);
+                if (pomocniczy=="Autokar") {
+                    dojazd.assign(opis.at(i));
+                }else if (pomocniczy=="Samolot") {
+                    dojazd.assign(opis.at(i));
+                }else if (pomocniczy=="Wlasny") {
+                    dojazd.assign(opis.at(i));
+                }else throw 1;
             }
             catch(int wyjatek){
                 cout<<"zly rodzaj transportu. Ta objazdowka zostaje pominieta!"<<endl;
-                return;
+               // return;
             }
         }
     }
-this->lista_objazdowek.push_back(nowaObjazdowka);
+    wskaznik=new WycieczkaObjazdowa();
+    return wskaznik;
 }
-*/
+/*
 //dodac zabezpieczenie, jesli wystapi jakis blad to wywiesic flage
  void BiuroPodrozy::rodzajTransportu(vector<char*>opis,int i, Wczasy &wczasy){
      if (atoi(opis.at(i+1))==0) throw 1;
@@ -218,7 +235,7 @@ this->lista_objazdowek.push_back(nowaObjazdowka);
     }else if (pomocniczy=="Wlasny") {
         strcpy(objazdowka.dojazd,opis.at(i));
     }else throw 1;
-}
+} */
 /*
 void BiuroPodrozy::szukajWczasow(struct tm data, int dlugosc, float cena, char *plik){
 

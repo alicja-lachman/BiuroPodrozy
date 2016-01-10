@@ -28,7 +28,7 @@ class BiuroPodrozy
        void rodzajTransportu2(vector<char*>opis,int i, WycieczkaObjazdowa &objazdowka);
        void interpretujDane(string zawartosc);
        Wczasy* tworzWczasy(vector <char*> opis);
-       void tworzObjazdowke(vector <char*> opis);
+       WycieczkaObjazdowa* tworzObjazdowke(vector <char*> opis);
        void drukujWczasy(char *sciezka, Wczasy &wczasy,float cena, int mnoznik=1);
        void drukujObjazdowke(char *sciezka, WycieczkaObjazdowa &objazd);
        int liczbaWycieczek;

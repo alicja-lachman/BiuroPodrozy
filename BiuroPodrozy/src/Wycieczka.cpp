@@ -9,7 +9,7 @@ Wycieczka::Wycieczka(std::string nazwa1, struct tm data_rozp, float koszt_wyc){
     data_rozpoczecia.tm_year=data_rozp.tm_year;
     kosztWycieczki=koszt_wyc;
 }
-/*
+
 Wycieczka::Wycieczka()
 {
     nazwa.assign("probna");
@@ -18,7 +18,7 @@ Wycieczka::Wycieczka()
     data_rozpoczecia.tm_year=1902;
     kosztWycieczki=0;
 }
-*/
+
 
 Wycieczka::~Wycieczka()
 {

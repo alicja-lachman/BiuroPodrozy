@@ -10,7 +10,7 @@ using namespace std;
 class WycieczkaObjazdowa : public Wycieczka
 {
 private:
-        char dojazd[30];
+        string dojazd;
         struct tm data_zakonczenia;
         vector <string> lista_miast;
         set <string> lista_krajow;
