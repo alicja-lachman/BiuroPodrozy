@@ -38,6 +38,7 @@ int main(int argc, char **argv){
 
         BiuroPodrozy biuro(sciezka, plik_wyjsciowy, rodzaj_wycieczki, dlugosc, cena, data);
         biuro.czytajPliki();
+        biuro.szukajWycieczek();
       /*  if (strcmp(rodzaj_wycieczki,"o")==0) biuro.szukajObjazdowek(data,dlugosc,cena,plik_wyjsciowy,'o');
         else if (strcmp(rodzaj_wycieczki,"p")==0) biuro.szukajWczasow(data, dlugosc, cena, plik_wyjsciowy);
         else if (strcmp(rodzaj_wycieczki,"l")==0) biuro.szukajObjazdowek(data,dlugosc,cena,plik_wyjsciowy,'l');

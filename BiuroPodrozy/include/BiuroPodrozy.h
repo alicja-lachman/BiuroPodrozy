@@ -1,34 +1,37 @@
 #ifndef BIUROPODROZY_H
 #define BIUROPODROZY_H
-#include "Wczasy.h"
+
 #include "WycieczkaObjazdowa.h"
 #include <string.h>
 #include <fstream>
 #include <vector>
-
+class Wczasy;
 using namespace std;
 class BiuroPodrozy
 {
     public:
-       BiuroPodrozy(char *sciezka, char *plik_wyjsciowy, char *rodzaj, int dlugosc, float cena, struct tm data);
+       BiuroPodrozy(char *sciezka, char *plik_wyjsciowy, char *rodzaj, int dlugosc, float cena, struct tm data, int liczbaWycieczek=0);
        ~BiuroPodrozy();
        void czytajPliki();
-       void szukajWczasow(struct tm data, int dlugosc, float cena, char *plik);
-       void szukajObjazdowek(struct tm data, int dlugosc, float cena, char *plik, char przelacznik);
+
        int podajIlosc();
-    private:
-        char *sciezka;
+       void szukajWycieczek();
+       char *sciezka;
         char *plik_wyjsciowy;
         char *rodzaj;
         int dlugosc;
         float cena;
         struct tm data;
-       vector <Wycieczka*> lista_wycieczek;
-       void rodzajTransportu(vector<char*>opis,int i, Wczasy &wczasy);
-       void rodzajTransportu2(vector<char*>opis,int i, WycieczkaObjazdowa &objazdowka);
+        void zwiekszLicznik();
+        vector <Wycieczka*> lista_wycieczek;
+    private:
+         void szukajWczasow();
+       void szukajObjazdowek();
+
        void interpretujDane(string zawartosc);
        Wczasy* tworzWczasy(vector <char*> opis);
        WycieczkaObjazdowa* tworzObjazdowke(vector <char*> opis);
+
        void drukujWczasy(char *sciezka, Wczasy &wczasy,float cena, int mnoznik=1);
        void drukujObjazdowke(char *sciezka, WycieczkaObjazdowa &objazd);
        int liczbaWycieczek;
