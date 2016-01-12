@@ -39,17 +39,11 @@ int main(int argc, char **argv){
         BiuroPodrozy biuro(sciezka, plik_wyjsciowy, rodzaj_wycieczki, dlugosc, cena, data);
         biuro.czytajPliki();
         biuro.szukajWycieczek();
-      /*  if (strcmp(rodzaj_wycieczki,"o")==0) biuro.szukajObjazdowek(data,dlugosc,cena,plik_wyjsciowy,'o');
-        else if (strcmp(rodzaj_wycieczki,"p")==0) biuro.szukajWczasow(data, dlugosc, cena, plik_wyjsciowy);
-        else if (strcmp(rodzaj_wycieczki,"l")==0) biuro.szukajObjazdowek(data,dlugosc,cena,plik_wyjsciowy,'l');
-        else if (strcmp(rodzaj_wycieczki,"d")==0) {
-            biuro.szukajObjazdowek(data,dlugosc,cena,plik_wyjsciowy,'o');
-            biuro.szukajObjazdowek(data, dlugosc, cena,plik_wyjsciowy, 'l');
-            biuro.szukajWczasow(data, dlugosc, cena, plik_wyjsciowy);
-        }
+
         cout<<"Oferta biura podrozy zostala wygenerowana i znajduje sie w pliku: "<<plik_wyjsciowy<<endl;
         cout<<"Znaleziono "<<
-        biuro.podajIlosc()<<" wycieczek spelniajacych dane kryteria"<<endl; */
+        biuro.getIloscWycieczek()<<" wycieczek spelniajacych dane kryteria"<<endl;
+
     }else
         cout<<"Zla ilosc argumentow wywolania programu!! Nastepuje zamkniecie programu!"<<endl;
 

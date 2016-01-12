@@ -8,6 +8,7 @@
 using namespace std;
 class Wczasy;
 class Laczona;
+
 class WycieczkaObjazdowa : public Wycieczka
 {
 private:
@@ -16,7 +17,6 @@ private:
         vector <string> lista_miast;
         set <string> lista_krajow;
         string ostatni_kraj;
-
     public:
         WycieczkaObjazdowa(string nazwa1, struct tm data_rozp, float koszt_wyc, string dojazd, struct tm data_zak, vector <string> lista_m, set <string> lista_k, string ostatni_k);
         ~WycieczkaObjazdowa();
@@ -26,8 +26,6 @@ private:
         string getListaMiast(int i);
         int getListaMiastRozmiar();
         set <string> getListaKrajow();
-
-
 };
 
 #endif // WYCIECZKAOBJAZDOWA_H

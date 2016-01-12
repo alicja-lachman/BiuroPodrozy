@@ -1,18 +1,6 @@
-1. Dookola Kraje: Malta Niemcy Polska Miasta: Huc Katowice Warszawa Berlin Wroclaw Koszt: 1850 Termin: 2016.1.17 - 2016.1.22
-2. Wycieczka laczona Dookola Kraje: Malta Niemcy Polska Miasta: Huc Katowice Warszawa Berlin Wroclaw  Termin: 2016.1.17 - 2016.1.22 Wczasy w Polska Miasto: Rimini Termin: 2016.1.22 (7 dni) Koszt: 2850
-3. Wycieczka laczona Dookola Kraje: Malta Niemcy Polska Miasta: Huc Katowice Warszawa Berlin Wroclaw  Termin: 2016.1.17 - 2016.1.22 Wczasy w Polska Miasto: Gdansk Termin: 2016.2.17 (7 dni) Koszt: 2850
-4. Srodziemie Kraje: Andora Francja Wlochy Miasta: Rzym Paryz Marsylia Andora Koszt: 2500 Termin: 2016.2.2 - 2016.2.15
-5. Okolice Kraje: Anglia Polska Miasta: Zernica Gliwice Wroclaw Warszawa Londyn Koszt: 2100 Termin: 2016.1.17 - 2016.1.25
-6. Zachod Kraje: Czechy Niemcy Polska Miasta: Praga Wroclaw Gdansk Berlin Olomuniec Koszt: 1450 Termin: 2016.1.11 - 2016.1.17
-7. Wycieczka laczona Zachod Kraje: Czechy Niemcy Polska Miasta: Praga Wroclaw Gdansk Berlin Olomuniec  Termin: 2016.1.11 - 2016.1.17 Wczasy w Czechy Miasto: Praga Termin: 2016.1.18 (5 dni) Koszt: 2150
-8.  Wlochy Kraj: Polska Miejscowosc: Rimini Koszt: 2300(Autokar) 2800(Samolot) 2000(Dojazd wlasny)  Termin: 2016.1.22 (14 dni)
-9.  Wlochy Kraj: Polska Miejscowosc: Rimini Koszt: 1300(Autokar) 1800(Samolot) 1000(Dojazd wlasny)  Termin: 2016.1.22 (7 dni)
-10.  Turcja Kraj: Turcja Miejscowosc: Istambul Koszt: 1200(Autokar) 1700(Samolot) 900(Dojazd wlasny)  Termin: 2016.1.17 (8 dni)
-11.  Slonecznie Kraj: Wlochy Miejscowosc: Florencja Koszt: 4500(Autokar) 4400(Samolot) 3600(Dojazd wlasny)  Termin: 2016.1.13 (12 dni)
-12.  Slonecznie Kraj: Wlochy Miejscowosc: Florencja Koszt: 2700(Autokar) 2600(Samolot) 1800(Dojazd wlasny)  Termin: 2016.1.13 (6 dni)
-13.  Pomorze Kraj: Polska Miejscowosc: Gdansk Koszt: 2300(Autokar) 2800(Samolot) 2000(Dojazd wlasny)  Termin: 2016.2.17 (14 dni)
-14.  Pomorze Kraj: Polska Miejscowosc: Gdansk Koszt: 1300(Autokar) 1800(Samolot) 1000(Dojazd wlasny)  Termin: 2016.2.17 (7 dni)
-15.  Sasiedzi Kraj: Czechy Miejscowosc: Praga Koszt: 2300(Autokar) 2200(Samolot) 2100(Dojazd wlasny)  Termin: 2016.1.18 (15 dni)
-16.  Sasiedzi Kraj: Czechy Miejscowosc: Praga Koszt: 1600(Autokar) 1500(Samolot) 1400(Dojazd wlasny)  Termin: 2016.1.18 (10 dni)
-17.  Sasiedzi Kraj: Czechy Miejscowosc: Praga Koszt: 900(Autokar) 800(Samolot) 700(Dojazd wlasny)  Termin: 2016.1.18 (5 dni)
-18.  Tropiki Kraj: Hiszpania Miejscowosc: Sewilla Koszt: 1200(Autokar) 1600(Samolot) 1000(Dojazd wlasny)  Termin: 2016.1.17 (15 dni)
+1. Wycieczka laczona Dookola + Wlochy  Kraje: Malta Niemcy Polska Miasta: Huc Katowice Warszawa Berlin Wroclaw  Termin: 2016.1.17 - 2016.1.22 Wczasy w Polska Miasto: Rimini Termin: 2016.1.22 (7 dni) Koszt: 2850
+2. Wycieczka laczona Dookola + Pomorze  Kraje: Malta Niemcy Polska Miasta: Huc Katowice Warszawa Berlin Wroclaw  Termin: 2016.1.17 - 2016.1.22 Wczasy w Polska Miasto: Gdansk Termin: 2016.2.17 (7 dni) Koszt: 2850
+3. Wycieczka laczona Zachod + Sasiedzi  Kraje: Czechy Niemcy Polska Miasta: Praga Wroclaw Gdansk Berlin Olomuniec  Termin: 2016.1.11 - 2016.1.17 Wczasy w Czechy Miasto: Praga Termin: 2016.1.18 (5 dni) Koszt: 2150
+1. Wycieczka laczona Dookola + Wlochy  Kraje: Malta Niemcy Polska Miasta: Huc Katowice Warszawa Berlin Wroclaw  Termin: 2016.1.17 - 2016.1.22 Wczasy w Polska Miasto: Rimini Termin: 2016.1.22 (7 dni) Koszt: 2850
+2. Wycieczka laczona Dookola + Pomorze  Kraje: Malta Niemcy Polska Miasta: Huc Katowice Warszawa Berlin Wroclaw  Termin: 2016.1.17 - 2016.1.22 Wczasy w Polska Miasto: Gdansk Termin: 2016.2.17 (7 dni) Koszt: 2850
+3. Wycieczka laczona Zachod + Sasiedzi  Kraje: Czechy Niemcy Polska Miasta: Praga Wroclaw Gdansk Berlin Olomuniec  Termin: 2016.1.11 - 2016.1.17 Wczasy w Czechy Miasto: Praga Termin: 2016.1.18 (5 dni) Koszt: 2150

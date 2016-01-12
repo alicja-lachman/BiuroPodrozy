@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="-k oferty/ -o plik1.txt -r d -t 20160107 -d 15 -c 5000" />
+				<Option parameters="-k oferty/ -o plik1.txt -r l -t 20160107 -d 15 -c 5000" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
@@ -36,11 +36,13 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/BiuroPodrozy.h" />
+		<Unit filename="include/Laczona.h" />
 		<Unit filename="include/Wczasy.h" />
 		<Unit filename="include/Wycieczka.h" />
 		<Unit filename="include/WycieczkaObjazdowa.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/BiuroPodrozy.cpp" />
+		<Unit filename="src/Laczona.cpp" />
 		<Unit filename="src/Wczasy.cpp" />
 		<Unit filename="src/Wycieczka.cpp" />
 		<Unit filename="src/WycieczkaObjazdowa.cpp" />
