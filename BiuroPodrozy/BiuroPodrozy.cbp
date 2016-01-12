@@ -36,15 +36,15 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/BiuroPodrozy.h" />
-		<Unit filename="include/Laczona.h" />
 		<Unit filename="include/Wczasy.h" />
 		<Unit filename="include/Wycieczka.h" />
+		<Unit filename="include/WycieczkaLaczona.h" />
 		<Unit filename="include/WycieczkaObjazdowa.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/BiuroPodrozy.cpp" />
-		<Unit filename="src/Laczona.cpp" />
 		<Unit filename="src/Wczasy.cpp" />
 		<Unit filename="src/Wycieczka.cpp" />
+		<Unit filename="src/WycieczkaLaczona.cpp" />
 		<Unit filename="src/WycieczkaObjazdowa.cpp" />
 		<Extensions>
 			<code_completion />
