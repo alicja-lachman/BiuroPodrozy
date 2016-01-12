@@ -13,24 +13,34 @@ Wczasy::Wczasy(string nazwa, struct tm data_rozpoczecia,int dlugosc, string dest
 
 
 Wczasy::~Wczasy(){}
-string Wczasy::zwrocDestynacje(){
+string Wczasy::getDestynacjaKraj(){
     return destynacja_kraj;
+}
+string Wczasy::getDestynacjaMiasto(){
+    return destynacja_miasto;
+}
+
+
+
+
+int Wczasy::getDlugosc(){
+    return dlugosc_turnusu;
 }
 void Wczasy::drukuj(BiuroPodrozy *biuro, int mnoznik){
 
-    float cenaSamolot = mnoznik*this->kosztWycieczki + this->koszt_samolot;
-    float cenaAutokar = mnoznik*this->kosztWycieczki + this->koszt_autokar;
+    float cenaSamolot = mnoznik*this->getKosztWycieczki() + this->koszt_samolot;
+    float cenaAutokar = mnoznik*this->getKosztWycieczki() + this->koszt_autokar;
     ofstream plik;
     plik.open(biuro->plik_wyjsciowy, ios_base::app); //nadpisywanie pliku
     plik<<biuro->podajIlosc()<<". ";
-    plik<<" "<<this->nazwa<<" Kraj: "<<this->destynacja_kraj<<" Miejscowosc: "<<this->destynacja_miasto<<" Koszt: ";
+    plik<<" "<<this->getNazwa()<<" Kraj: "<<this->destynacja_kraj<<" Miejscowosc: "<<this->destynacja_miasto<<" Koszt: ";
 
     if (cenaAutokar<=biuro->cena) plik<<cenaAutokar<<"(Autokar) ";
     if (cenaSamolot<=biuro->cena) plik<<cenaSamolot<<"(Samolot) ";
-    if (mnoznik*this->kosztWycieczki<=biuro->cena) plik<<mnoznik*this->kosztWycieczki<<"(Dojazd wlasny) ";
+    if (mnoznik*this->getKosztWycieczki()<=biuro->cena) plik<<mnoznik*this->getKosztWycieczki()<<"(Dojazd wlasny) ";
     plik<<" Termin: "
-    <<this->data_rozpoczecia.tm_year<<"."<<this->data_rozpoczecia.tm_mon<<"."
-    <<this->data_rozpoczecia.tm_mday<<" ("<<mnoznik*this->dlugosc_turnusu<<" dni)"<<endl;
+    <<this->getDataRozp().tm_year<<"."<<this->getDataRozp().tm_mon<<"."
+    <<this->getDataRozp().tm_mday<<" ("<<mnoznik*this->getDlugosc()<<" dni)"<<endl;
 
     plik.close();
 
@@ -39,13 +49,13 @@ void Wczasy::sprawdz(BiuroPodrozy *biuro){
     Wczasy *pd;
     pd=dynamic_cast<Wczasy*>(this);
     if (pd!=NULL) {
-        if (porownajDate(pd->data_rozpoczecia,biuro->data)){
+        if (porownajDate(pd->getDataRozp(),biuro->data)){
 
             int mnoznik=(biuro->dlugosc/pd->dlugosc_turnusu);
             for(;mnoznik>=1;mnoznik--) {
-                if (((pd->kosztWycieczki)*mnoznik+(pd->koszt_autokar)<=biuro->cena) ||
-                ((pd->kosztWycieczki)*mnoznik+(pd->koszt_samolot)<=biuro->cena) ||
-                ((pd->kosztWycieczki)*mnoznik<=biuro->cena)){
+                if (((pd->getKosztWycieczki())*mnoznik+(pd->koszt_autokar)<=biuro->cena) ||
+                ((pd->getKosztWycieczki())*mnoznik+(pd->koszt_samolot)<=biuro->cena) ||
+                ((pd->getKosztWycieczki())*mnoznik<=biuro->cena)){
                     biuro->zwiekszLicznik();
                     pd->drukuj(biuro, mnoznik);
                 } //warunek cenowy dla wielokrotnego turnusu

@@ -22,6 +22,11 @@ private:
         ~WycieczkaObjazdowa();
         void drukuj(BiuroPodrozy *biuro, int mnoznik=1);
         void sprawdz(BiuroPodrozy *biuro);
+        struct tm getDataZak();
+        string getListaMiast(int i);
+        int getListaMiastRozmiar();
+        set <string> getListaKrajow();
+
 
 };
 

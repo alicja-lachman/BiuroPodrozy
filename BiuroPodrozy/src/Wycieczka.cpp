@@ -21,6 +21,16 @@ Wycieczka::Wycieczka()
 }
 void Wycieczka::drukuj(BiuroPodrozy *biuro, int mnoznik){}
 
+struct tm Wycieczka::getDataRozp(){
+    return data_rozpoczecia;
+}
+
+float Wycieczka::getKosztWycieczki(){
+    return kosztWycieczki;
+}
+string Wycieczka::getNazwa(){
+    return nazwa;
+}
 void Wycieczka::sprawdz(BiuroPodrozy *biuro){}
 Wycieczka::~Wycieczka(){}
 

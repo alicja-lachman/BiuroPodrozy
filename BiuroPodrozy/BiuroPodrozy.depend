@@ -4,35 +4,35 @@
 	"BiuroPodrozy.h"
 	<stdlib.h>
 
-1452553696 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wczasy.cpp
+1452558650 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wczasy.cpp
 	"Wczasy.h"
 	"BiuroPodrozy.h"
 	<string.h>
 	<iostream>
 
-1452553696 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wczasy.h
+1452558650 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wczasy.h
 	"BiuroPodrozy.h"
 	"Wycieczka.h"
 	<vector>
 
-1452552085 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczka.h
+1452557838 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczka.h
 	<time.h>
 	<string>
 	<iostream>
 
-1452551763 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczka.cpp
+1452557831 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczka.cpp
 	"Wycieczka.h"
 	<string.h>
 	<iostream>
 
-1452554738 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczkaobjazdowa.cpp
+1452559061 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\wycieczkaobjazdowa.cpp
 	"WycieczkaObjazdowa.h"
 	"BiuroPodrozy.h"
 	"Wczasy.h"
 	"Laczona.h"
 	<string.h>
 
-1452554476 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczkaobjazdowa.h
+1452559061 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\wycieczkaobjazdowa.h
 	<vector>
 	<set>
 	<Wycieczka.h>
@@ -68,10 +68,10 @@
 	<assert.h>
 	<memory>
 
-1452554379 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\laczona.cpp
+1452559044 source:c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\src\laczona.cpp
 	"Laczona.h"
 
-1452554754 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\laczona.h
+1452558458 c:\users\alicja\documents\github\biuropodrozy\biuropodrozy\include\laczona.h
 	"Wczasy.h"
 	"WycieczkaObjazdowa.h"
 

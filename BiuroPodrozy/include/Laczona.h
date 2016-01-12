@@ -6,12 +6,14 @@
 class Laczona
 {
     public:
-        Laczona(Wczasy *wczasy, WycieczkaObjazdowa *objazd);
+        Laczona(Wczasy &wczasy, WycieczkaObjazdowa &objazd);
         virtual ~Laczona();
-        Wczasy *wczasy;
-        WycieczkaObjazdowa *objazd;
+        Wczasy &wczasy;
+        WycieczkaObjazdowa &objazd;
+        void sprawdz(BiuroPodrozy *biuro);
     protected:
     private:
+        void drukujLaczona(BiuroPodrozy *biuro);
 
 };
 

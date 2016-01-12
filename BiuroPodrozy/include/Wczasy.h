@@ -20,7 +20,10 @@ public:
         Wczasy(string nazwa, struct tm data_rozpoczecia,int dlugosc, string destynacja_miasto, string destynacja_kraj, float kosztWycieczki, float koszt_autokar, float koszt_samolot, float koszt_wlasny);
         void sprawdz(BiuroPodrozy *biuro);
         void drukuj(BiuroPodrozy *biuro, int mnoznik=1);
-        string zwrocDestynacje();
+        string getDestynacjaKraj();
+        string getDestynacjaMiasto();
+        struct tm getDataZak();
+        int getDlugosc();
         ~Wczasy();
 
 

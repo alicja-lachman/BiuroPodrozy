@@ -6,7 +6,7 @@
 class BiuroPodrozy;
 class Wycieczka
 {
-   protected:
+   private:
         std::string nazwa;
         struct tm data_rozpoczecia;
         float kosztWycieczki;
@@ -18,6 +18,9 @@ class Wycieczka
         virtual ~Wycieczka();
         bool porownajDate(struct tm data1, struct tm data2);
         int obliczIloscDni(struct tm data1, struct tm data2);
+        struct tm getDataRozp();
+        float getKosztWycieczki();
+        std::string getNazwa();
 
 };
 
