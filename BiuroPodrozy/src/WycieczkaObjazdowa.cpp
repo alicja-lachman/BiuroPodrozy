@@ -1,7 +1,7 @@
 #include "WycieczkaObjazdowa.h"
 #include "BiuroPodrozy.h"
 #include "Wczasy.h"
-#include "Laczona.h"
+#include "WycieczkaLaczona.h"
 #include <string.h>
 
 WycieczkaObjazdowa::WycieczkaObjazdowa(string nazwa1, struct tm data_rozp, float koszt_wyc, string dojazd, struct tm data_zak, vector <string> lista_m, set <string> lista_k, string ostatni_k):
@@ -63,7 +63,7 @@ void WycieczkaObjazdowa::sprawdz(BiuroPodrozy *biuro){
 
                                     if(wsk!=NULL){
                                         if ((wsk->getDestynacjaKraj())==(this->ostatni_kraj)){
-                                            Laczona laczona=Laczona(*wsk,*this);
+                                            WycieczkaLaczona laczona=WycieczkaLaczona(*wsk,*this);
                                             laczona.sprawdz(biuro);
                                         }
                                     }

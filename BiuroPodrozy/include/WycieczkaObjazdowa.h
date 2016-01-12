@@ -7,7 +7,7 @@
 
 using namespace std;
 class Wczasy;
-class Laczona;
+class WycieczkaLaczona;
 
 class WycieczkaObjazdowa : public Wycieczka
 {

@@ -13,7 +13,7 @@ BiuroPodrozy::BiuroPodrozy(char *sciezka, char *plik_wyjsciowy, char *rodzaj, in
 
 BiuroPodrozy::~BiuroPodrozy(){
     liczbaWycieczek=0;
-    for (unsigned int i=0; i<(lista_wycieczek.size()-1); i++)
+    for (unsigned int i=0; i<lista_wycieczek.size(); i++)
         delete lista_wycieczek[i];
 }
 

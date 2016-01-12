@@ -1,10 +1,10 @@
-#include "Laczona.h"
+#include "WycieczkaLaczona.h"
 
 WycieczkaLaczona::WycieczkaLaczona(Wczasy &wczasy, WycieczkaObjazdowa &objazd):wczasy(wczasy),objazd(objazd){}
 
-Laczona::~Laczona(){}
+WycieczkaLaczona::~WycieczkaLaczona(){}
 
-void Laczona::sprawdz(BiuroPodrozy *biuro){
+void WycieczkaLaczona::sprawdz(BiuroPodrozy *biuro){
 
     if ((biuro->dlugosc - (objazd.obliczIloscDni(objazd.getDataRozp(),objazd.getDataZak()))) >= wczasy.getDlugosc()){
         if (wczasy.porownajDate(wczasy.getDataRozp(),objazd.getDataZak())){
@@ -16,7 +16,7 @@ void Laczona::sprawdz(BiuroPodrozy *biuro){
     }//warunek sprawdzajacy dlugosc laczonej wycieczki
 }
 
-void Laczona::drukujLaczona(BiuroPodrozy *biuro){
+void WycieczkaLaczona::drukujLaczona(BiuroPodrozy *biuro){
 
     ofstream plik;
     plik.open(biuro->plik_wyjsciowy, ios_base::app); //nadpisywanie pliku
